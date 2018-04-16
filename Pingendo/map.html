@@ -57,31 +57,43 @@
       </div>
     </div>
   </div>
-  <div class="py-5">
+  <div class="py-1">
     <div class="container">
       <div class="row">
         <div class="col-md-12 w-100 h-50">
-          <div id="map" style="width:100%;height:500px"></div>
-          <script>
-            function myMap() {
-              var myCenter = new google.maps.LatLng(51.508742,-0.120850);
-              var mapCanvas = document.getElementById("map");
-              var mapOptions = {center: myCenter, zoom: 5};
-              var map = new google.maps.Map(mapCanvas, mapOptions);
-              var marker = new google.maps.Marker({position:myCenter});
-              marker.setMap(map);
-            
-              var infowindow = new google.maps.InfoWindow({
-                content: "Hello World!"
-              });
-              infowindow.open(map,marker);
-            }
-          </script>
-          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOV-Z1wivmHm3-xazNtxRrXmZye9QbTXU&amp;callback=myMap"></script>
+          <div id="map1" style="width:100%;height:500px"></div>
         </div>
       </div>
     </div>
   </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#">HTML</a>
+              </li>
+              <li>
+                <a href="#">CSS</a>
+              </li>
+              <li>
+                <a href="#">JavaScript</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/dropdown-script.js"></script>
+  <script src="js/map-script.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOV-Z1wivmHm3-xazNtxRrXmZye9QbTXU&amp;callback=map1"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
