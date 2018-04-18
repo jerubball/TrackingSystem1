@@ -15,7 +15,7 @@
 		// toggle className based on the scrollTop property of document
 		var nav = document.querySelector(".navbar")
 
-		if (window.scrollY > 15)
+		if (window.scrollY > 30)
 			nav.classList.remove(className)
 		else
 			nav.classList.add(className) 
