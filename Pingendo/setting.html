@@ -5,6 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="theme.css" type="text/css">
+  <link rel="stylesheet" href="aquamarine.css">
   <link rel="stylesheet" href="colorful.css"> </head>
 
 <body>
@@ -46,7 +48,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <a href="#" class="btn btn-outline-primary">Edit Account Information</a>
+          <a href="#" onclick="display = EditAcctInfo()" class="btn btn-outline-primary" id="EditAcctInfo">Edit Account Information</a>
         </div>
       </div>
     </div>
@@ -55,7 +57,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 border">
-          <form class="text-primary">
+          <form class="text-primary" style="display:none">
             <div class="form-group border-primary">
               <label for="exampleInputEmail1">First Name</label>
               <input type="text" class="form-control" id="inlineFormInput" placeholder="Jane Doe"> </div>
