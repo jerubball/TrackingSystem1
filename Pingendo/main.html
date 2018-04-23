@@ -33,7 +33,28 @@
       </div>
     </div>
   </nav>
-  <div class="py-5">
+  <div class="py-3" id="selection" style="display: block">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p class="lead">Choose children to track</p>
+        </div>
+        <div class="col-md-6">
+          <div class="btn-group">
+            <button class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">Select</button>
+            <div class="dropdown-menu">
+              <button class="dropdown-item" type="button" onclick="notifyValue(1)">Child 1</button>
+              <button class="dropdown-item" type="button" onclick="notifyValue(2)">Child 2</button>
+              <button class="dropdown-item" type="button" onclick="notifyValue(3)">Child 3</button>
+              <div class="dropdown-divider"></div>
+              <button class="dropdown-item" type="button" onclick="notifyValue(4)">Option 1</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-3">
     <div class="container">
       <div class="row">
         <div class="col-md-12 w-100 h-50">
@@ -42,8 +63,19 @@
       </div>
     </div>
   </div>
+  <div class="py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <a class="btn btn-primary btn-lg" href="#" onclick="hideById('selection')">Toggle</a>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
   </script>
+  <script src="js/dropdown-script.js"></script>
+  <script src="js/hide-script.js"></script>
   <script src="js/map-script.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOV-Z1wivmHm3-xazNtxRrXmZye9QbTXU&amp;callback=map1"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

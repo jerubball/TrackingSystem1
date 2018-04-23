@@ -10,7 +10,7 @@ function map1() {
 function showMap1 (position) {
   var myCenter = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
   var mapCanvas = document.getElementById("map1");
-  var mapOptions = {center: myCenter, zoom: 5};
+  var mapOptions = {center: myCenter, zoom: 12};
   var map = new google.maps.Map(mapCanvas, mapOptions);
   var marker = new google.maps.Marker({position:myCenter});
   marker.setMap(map);

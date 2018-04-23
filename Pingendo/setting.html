@@ -48,16 +48,16 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <a href="#" onclick="EditAcctInfo()" class="btn btn-outline-primary" id="EditAcctInfo">Edit Account Information</a>
+          <a href="#" onclick="hideById('acctInfo')" class="btn btn-outline-primary">Edit Account Information</a>
         </div>
       </div>
     </div>
   </div>
-  <div class="py-5">
+  <div class="py-5" id="acctInfo" style="display:none">
     <div class="container">
       <div class="row">
         <div class="col-md-12 border">
-          <form class="text-primary" style="display:none">
+          <form class="text-primary">
             <div class="form-group border-primary">
               <label for="exampleInputEmail1">First Name</label>
               <input type="text" class="form-control" id="inlineFormInput" placeholder="Jane Doe"> </div>
@@ -114,12 +114,12 @@
   </div>
   <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 10px;right:10px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:180px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo&nbsp;&nbsp;
     <img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16">
   </pingendo>
-  <script src="js/script.js"></script>
+  <script src="js/hide-script.js"></script>
 </body>
 
 </html>
