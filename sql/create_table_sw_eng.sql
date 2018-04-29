@@ -14,6 +14,8 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 -- Schema Child_Tracker
 -- -----------------------------------------------------
+
+-- DROP SCHEMA `Child_Tracker` ;
 CREATE SCHEMA IF NOT EXISTS `Child_Tracker` ;
 USE `Child_Tracker` ;
 
@@ -35,7 +37,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Child_Tracker`.`account_info` (
   `Account_ID` INT NOT NULL AUTO_INCREMENT,
-  `Account_Token` TEXT UNIQUE NULL,
+  `Account_Token` TEXT NULL,
   `First_Name` VARCHAR(100) NULL,
   `Last_Name` VARCHAR(100) NULL,
   `Email` VARCHAR(100) NOT NULL,
