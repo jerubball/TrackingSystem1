@@ -56,7 +56,18 @@
                 // The ID token you need to pass to your backend:
                 var id_token = googleUser.getAuthResponse().id_token;
                 console.log("ID Token: " + id_token);
-              };
+				
+				 $.post("savesettings.php",
+				{
+					
+					idtoken: id_token,
+					fname: profile.getGivenName(),
+					lname: profile.getFamilyName(),
+					email: profile.getEmail(),
+					
+				});
+				console.log("after.post");
+				};
           </script>
         </div>
         <div class="col-md-6">
