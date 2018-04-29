@@ -22,10 +22,10 @@ USE `Child_Tracker` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Child_Tracker`.`family_group` (
   `Group_ID` INT NOT NULL AUTO_INCREMENT,
-  `Street_Address` VARCHAR(45) NOT NULL,
-  `City_Address` VARCHAR(45) NOT NULL,
-  `State_Address` VARCHAR(45) NOT NULL,
-  `Zip_Address` VARCHAR(45) NOT NULL,
+  `Street_Address` VARCHAR(100) NOT NULL,
+  `City_Address` VARCHAR(100) NOT NULL,
+  `State_Address` VARCHAR(100) NOT NULL,
+  `Zip_Address` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`Group_ID`))
 ENGINE = InnoDB;
 
@@ -35,9 +35,10 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Child_Tracker`.`account_info` (
   `Account_ID` INT NOT NULL AUTO_INCREMENT,
-  `First_Name` VARCHAR(45) NULL,
-  `Last_Name` VARCHAR(45) NULL,
-  `Email` VARCHAR(45) NOT NULL,
+  `Account_Token` TEXT UNIQUE NULL,
+  `First_Name` VARCHAR(100) NULL,
+  `Last_Name` VARCHAR(100) NULL,
+  `Email` VARCHAR(100) NOT NULL,
   `Group_ID` INT NOT NULL,
   `Gender` ENUM('Male', 'Female') NULL,
   `Account_Type` ENUM('Parent', 'Child') NOT NULL,
@@ -60,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `Child_Tracker`.`location` (
   `Latitude` FLOAT NOT NULL,
   `Status` ENUM('Normal', 'Emergency') NOT NULL,
   `Account_ID` INT NOT NULL,
-  PRIMARY KEY (`Time`),
+  PRIMARY KEY (`Time`, `Account_ID`),
   INDEX `Account_ID_idx` (`Account_ID` ASC),
   CONSTRAINT `Account_ID`
     FOREIGN KEY (`Account_ID`)
