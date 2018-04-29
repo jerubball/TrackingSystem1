@@ -1,5 +1,4 @@
-GRANT INSERT,SELECT,DELETE,UPDATE 
-ON account_info
+GRANT INSERT,SELECT,DELETE,UPDATE ON Child_Tracker
 TO 'admin'
 @'him-nyit.ddns.net' 
 IDENTIFIED BY 'admin'
