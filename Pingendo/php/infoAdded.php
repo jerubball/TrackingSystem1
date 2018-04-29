@@ -1,5 +1,10 @@
-<?php 
+<html>
+<body>
 
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+<?php
+echo "hi";
         $f_name = trim($_POST['first_name']);
         $l_name = trim($_POST['last_name']);
         $gender = trim($_POST['gender']);
@@ -18,3 +23,6 @@ mysqli_stmt_close($stmt);
 mysqli_close($dbc);
 
 
+?>
+</body>
+</html>
