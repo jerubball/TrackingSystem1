@@ -4,7 +4,7 @@
 <h1>Your Information has been updated</h1>
 
 <?php
-if(isset ($_POST("first_name"))) // If the user came to this page by using edit account info
+if($_POST("first_name")!== null) // If the user came to this page by using edit account info
 {
       $fName = $_POST["first_name"];
       $lName = $_POST["last_name"];
