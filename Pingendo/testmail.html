@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<?php
+$result = mail ("him.nyit@gmail.com", "Test Mail from PHP", "test email",
+        "From: him.nyit@gmail.com\r\n".
+        "Reply-To: him.nyit@gmail.com\r\n".
+        "X-Mailer: PHP/" . phpversion());
+if ($result) {
+    echo "True";
+}
+else {
+    echo "False";
+}
+?>
+</body>
+
+</html>
