@@ -20,20 +20,22 @@ if (isset($_SESSION['id'])) {
     $row = mysqli_fetch_assoc($ans);
     $usr = $row['Account_ID'];
     
-    $sql = "SELECT COUNT(*) AS num FROM Child_Tracker.location WHERE Account_ID = " . $usr;
-    $ans = $conn -> query($sql);
-    $row = mysqli_fetch_assoc($ans);
-    $num = intval($row['num']);
-    
-    for ($i = 0; $i < $num; $i++) {
-        echo "-";
-    }
-    
-    //$now = time();
-    //$sql = "INSERT INTO Child_Tracker.location VALUES ($usr, FROM_UNIXTIME($now), $lat, $lon, 'Normal')";
+    //$sql = "SELECT COUNT(*) AS num FROM Child_Tracker.location WHERE Account_ID = " . $usr;
     //$ans = $conn -> query($sql);
-    //echo $id;
-    mysqli_close($conn);
+    //$row = mysqli_fetch_assoc($ans);
+    //$num = intval($row['num']);
+    
+    $sql = "SELECT * FROM Child_Tracker.location WHERE Account_ID = " . $usr;
+    $ans = $conn -> query($sql);
+    if ($ans->num_rows > 0) {
+    // output data of each row
+        while($row = $ans->fetch_assoc()) {
+            echo "id: " . $row['Account_ID']. " - Lat: " . $row['Latitude']. " Lon: " . $row['Longitude']. " ;\n";
+        }
+    } else {
+        echo "0 results";
+    }
+    $conn -> close();
 }
 
 
