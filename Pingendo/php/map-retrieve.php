@@ -23,9 +23,11 @@ if (isset($_SESSION['id'])) {
     $sql = "SELECT COUNT(*) AS num FROM Child_Tracker.location WHERE Account_ID = " . $usr;
     $ans = $conn -> query($sql);
     $row = mysqli_fetch_assoc($ans);
-    $num = $row['num'];
+    $num = intval($row['num']);
     
-    echo $num;
+    for ($i = 0; $i < $num; $i++) {
+        echo "-";
+    }
     
     //$now = time();
     //$sql = "INSERT INTO Child_Tracker.location VALUES ($usr, FROM_UNIXTIME($now), $lat, $lon, 'Normal')";

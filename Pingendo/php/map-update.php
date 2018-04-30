@@ -26,7 +26,7 @@ if (isset($_SESSION['id'])) {
     $now = time();
     $sql = "INSERT INTO Child_Tracker.location VALUES ($usr, FROM_UNIXTIME($now), $lat, $lon, 'Normal')";
     $ans = $conn -> query($sql);
-    echo "Done";
+    //echo $id;
     mysqli_close($conn);
 }
 
