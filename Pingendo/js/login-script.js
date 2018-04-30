@@ -23,6 +23,7 @@ function onSignIn(googleUser) {
     */
     
     updateSession (profile.getId());
+    redirectURL ("/main.html");
 }
 
 function signOut() {
@@ -42,4 +43,11 @@ function updateSession (id) {
     };
     xmlhttp.open ("GET", "/php/login-cache.php?id=" + id, true);
     xmlhttp.send ();
+}
+
+function redirectURL (url) {
+    // similar behavior as an HTTP redirect
+    window.location.replace(url);
+    // similar behavior as clicking on a link
+    //window.location.href = url;
 }
