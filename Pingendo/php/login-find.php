@@ -15,7 +15,7 @@ if (isset($_SESSION['id'])) {
       die ("Connection failed: " . $conn -> connect_error);
     }
     
-    $sql = "SELECT COUNT(*) AS entries FROM Child_Tracker.account_info WHERE Account_Token = " . $id;
+    $sql = "SELECT COUNT(*) AS entries FROM Child_Tracker.account_info WHERE Account_Google_ID = " . $id;
     $ans = $conn -> query($sql);
     $row = mysqli_fetch_assoc($ans);
     echo $row['entries'];
