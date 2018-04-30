@@ -12,7 +12,9 @@ function showMap1 (position) {
   var xmlhttp = new XMLHttpRequest ();
   xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      alert (this.responseText);
+      //alert (this.responseText);
+      var coords = this.responseText.split(";");
+      alert (coords.length);
       var myCenter = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
       var mapCanvas = document.getElementById("map1");
       var mapOptions = {center: myCenter, zoom: 12};
