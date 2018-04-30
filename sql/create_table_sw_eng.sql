@@ -60,8 +60,8 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `Child_Tracker`.`location` (
   `Account_ID` INT NOT NULL,
   `Time` DATETIME NOT NULL,
-  `Longitude` FLOAT NOT NULL,
   `Latitude` FLOAT NOT NULL,
+  `Longitude` FLOAT NOT NULL,
   `Status` ENUM('Normal', 'Emergency') NOT NULL,
   PRIMARY KEY (`Account_ID`, `Time`),
   INDEX `Account_ID_idx` (`Account_ID` ASC),
