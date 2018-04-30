@@ -16,9 +16,10 @@ if (isset($_SESSION['id'])) {
       die ("Connection failed: " . $conn -> connect_error);
     }
     
-    $sql = "SELECT COUNT(*) FROM Child_Tracker.account_info WHERE Account_Token = " . $id;
+    $sql = "SELECT COUNT(*) AS entries FROM Child_Tracker.account_info WHERE Account_Token = " . $id;
     $ans = $conn -> query($sql);
-    echo $ans;
+    $row = mysqli_fetch_assoc($ans);
+    echo $row['entries'];
 }
 
 ?>
