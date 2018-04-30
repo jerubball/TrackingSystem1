@@ -81,10 +81,10 @@ function checkNewUser () {
             if (this.responseText == "0") {
                 alert ("Your account was never set before.\nPlease enter your information in settings page.");
                 addNewUser ();
-                //redirectURL("setting.html");
+                redirectURL("setting.html");
             }
             else {
-                //redirectURL("map.html");
+                redirectURL("map.html");
             }
         }
     };
@@ -96,7 +96,7 @@ function addNewUser () {
     var xmlhttp = new XMLHttpRequest ();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            alert (this.responseText);
+            //alert (this.responseText);
             /*if (this.responseText) {
                 redirectURL("error.html");
             }

@@ -12,31 +12,6 @@ if (isset($_SESSION['id'])) {
     $last = $_SESSION['last'];
     $email = $_SESSION['email'];
     
-    if (is_string($id)) {
-        echo "1";
-    }
-    else {
-        echo "2";
-    }
-    if (is_string($first)) {
-        echo "1";
-    }
-    else {
-        echo "2";
-    }
-    if (is_string($last)) {
-        echo "1";
-    }
-    else {
-        echo "2";
-    }
-    if (is_string($email)) {
-        echo "1";
-    }
-    else {
-        echo "2";
-    }
-    
     $conn = new mysqli ($db_server, $db_user, $db_pass);
     
     if ($conn -> connect_error) {
@@ -44,11 +19,8 @@ if (isset($_SESSION['id'])) {
     }
     
     $sql = "INSERT INTO Child_Tracker.account_info VALUES (DEFAULT, '$id', '$first', '$last', '$email', NULL, NULL, NULL)";
-    //$sql = "SELECT * FROM Child_Tracker.account_info LIMIT 1";
     $ans = $conn -> query($sql);
     echo $id." ".$first." ".$last." ".$email;
-    //$row = mysqli_fetch_assoc($ans);
-    //echo $row['Account_ID'];
     mysqli_close($conn);
 }
 
