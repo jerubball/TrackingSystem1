@@ -70,7 +70,7 @@ function checkNewUser () {
             if (this.responseText == "0") {
                 alert ("Your account was never set before.\nPlease enter your information in settings page.");
                 //addNewUser ();
-                alert (profile.getID ();
+                alert (profile.getID ());
                 redirectURL("setting.html");
             }
             else {
