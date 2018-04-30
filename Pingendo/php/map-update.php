@@ -18,6 +18,12 @@ if (isset($_SESSION['id'])) {
       die ("Connection failed: " . $conn -> connect_error);
     }
     
+    $sql = "SELECT Account_ID FROM Child_Tracker.account_info WHERE Google_UID = " . $id;
+    $ans = $conn -> query($sql);
+    $row = mysqli_fetch_assoc($ans);
+    $usr = $row['Account_ID'];
+    echo $usr;
+    
     $now = time();
     $sql = "INSERT INTO Child_Tracker.test VALUES (DEFAULT, $id, $lat, $lon, FROM_UNIXTIME($now))";
     $ans = $conn -> query($sql);
