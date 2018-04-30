@@ -22,10 +22,9 @@ if (isset($_SESSION['id'])) {
     $ans = $conn -> query($sql);
     $row = mysqli_fetch_assoc($ans);
     $usr = $row['Account_ID'];
-    echo $usr;
     
     $now = time();
-    $sql = "INSERT INTO Child_Tracker.test VALUES (DEFAULT, $id, $lat, $lon, FROM_UNIXTIME($now))";
+    $sql = "INSERT INTO Child_Tracker.location VALUES ($usr, FROM_UNIXTIME($now), $lat, $lon, 'Normal')";
     $ans = $conn -> query($sql);
     echo $id;
     mysqli_close($conn);
