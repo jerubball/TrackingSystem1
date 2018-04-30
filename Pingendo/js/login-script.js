@@ -14,12 +14,12 @@ function onSignIn(googleUser) {
 /*
     $.post("savesettings.php",
     {
-        idtoken: id_token,
+        idtoken: id_token,// this gives different tokens so replace with profile.getID(),
         fname: profile.getGivenName(),
         lname: profile.getFamilyName(),
         email: profile.getEmail(),
     });
-    console.log("after.post");
+
     */
     
     updateSession (profile.getId());
