@@ -7,4 +7,6 @@ $id = intval ($_GET['id']);
 
 $_SESSION['ID'] = $id;
 
+echo $id;
+
 ?>

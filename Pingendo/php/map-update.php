@@ -16,7 +16,7 @@ if ($conn -> connect_error) {
 $now = time();
 $sql = "INSERT INTO Child_Tracker.test VALUES (DEFAULT, $id, $lat, $lon, FROM_UNIXTIME($now))";
 $ans = $conn -> query($sql);
-echo $ans;
+echo $id;
 
 
 ?>
