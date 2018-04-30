@@ -20,7 +20,7 @@ if (isset($_SESSION['id'])) {
     
     $sql = "INSERT INTO Child_Tracker.account_info VALUES (DEFAULT, $id, $first, $last, $email, NULL, NULL, NULL)";
     $ans = $conn -> query($sql);
-    echo $id." "$first." ".$last." ".$email;
+    echo $id." ".$first." ".$last." ".$email;
     mysqli_close($conn);
 }
 
