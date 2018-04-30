@@ -18,8 +18,21 @@ function showMap1 (position) {
     content: "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude
   });
   infowindow.open(map,marker);
+  updateDB (position);
 }
 
 function alertLocation (position) {
   alert ("Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);
+}
+
+function updateDB (position)
+{
+  var xmlhttp = new XMLHttpRequest ();
+  xmlhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      alert (this.responseText);
+    }
+  };
+  xmlhttp.open ("GET", "/php/map-update.php?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude, true);
+  xmlhttp.send ();
 }
