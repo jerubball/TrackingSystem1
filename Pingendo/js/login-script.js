@@ -46,34 +46,38 @@ function updateSession (id) {
 }
 
 function checkSignIn () {
-    var xmlhttp1 = new XMLHttpRequest ();
-    xmlhttp1.onreadystatechange = function () {
+    var xmlhttp = new XMLHttpRequest ();
+    xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             //alert (this.responseText);
             if (this.responseText) {
-                var xmlhttp2 = new XMLHttpRequest ();
-                xmlhttp2.onreadystatechange = function () {
-                    if (this.readyState == 4 && this.status == 200) {
-                        //alert (this.responseText);
-                        if (this.responseText == "0") {
-                            alert ("Your account was never set before.\nPlease enter your information in settings page.");
-                            redirectURL("setting.html");
-                        }
-                        else {
-                            redirectURL("main.html");
-                        }
-                    }
-                };
-                xmlhttp2.open ("GET", "/php/login-find.php", true);
-                xmlhttp2.send ();
+                checkNewUser ();
             }
             else {
                 alert ("You are not signed in.");
             }
         }
     };
-    xmlhttp1.open ("GET", "/php/login-cache.php?id=check", true);
-    xmlhttp1.send ();
+    xmlhttp.open ("GET", "/php/login-cache.php?id=check", true);
+    xmlhttp.send ();
+}
+
+function checkNewUser () {
+    var xmlhttp = new XMLHttpRequest ();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            //alert (this.responseText);
+            if (this.responseText == "0") {
+                alert ("Your account was never set before.\nPlease enter your information in settings page.");
+                redirectURL("setting.html");
+            }
+            else {
+                redirectURL("main.html");
+            }
+        }
+    };
+    xmlhttp.open ("GET", "/php/login-find.php", true);
+    xmlhttp.send ();
 }
 
 function redirectURL (url) {
