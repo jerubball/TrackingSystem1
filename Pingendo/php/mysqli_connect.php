@@ -1,10 +1,11 @@
 <?php
-DEFINE ('Database_USER', 'admin');
-DEFINE ('Database_PASSWORD', 'admin');
-DEFINE ('Database_HOST', 'him-nyit.ddns.net');
-DEFINE ('Database_NAME', 'account_info');
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "child_tracker";
 
-$dbc = @mysqli_connect(Database_USER, Database_PASSWORD, Database_HOST,Database_NAME)
+
+$dbc = @mysqli_connect(servername, username, password, dbname)
 OR Die('cannot connect to database');
 
 ?>

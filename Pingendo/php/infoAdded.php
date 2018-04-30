@@ -13,16 +13,16 @@ if(isset ($_POST("first_name"))) // If the user came to this page by using edit 
 	  $number = $_POST("number");
 	  echo "The following has been updated:" . $fName . " " . $lName . " " .$gender . " " .$email." ". $number;
 }   
-else // User came to this page by using edit address info
+else // User came to this page by using Create Group
 {
 	  $street = $_POST["street"];
       $city = $_POST["city"];
 	  $state = $_POST["state"];
 	  $zip = $_POST("zip");
 	  echo "The following has been updated:" . $street . " " . $city . " " .$state . " " .$zip;
+	  mysqli_query($dbc, "INSERT INTO family_group(Street_Address, City_Address, State_Address, Zip_Address)
+						  VALUES(" . $street .", ". $city . ", " . $state . ", " . $zip . ")")
 }
-// leave for now require_once('../mysqli_connect.php');
-//$query = "UPDATE account_Info SET first_name = $f_name, last_name = $l_name, gender = $gender, email = $email";
 
 ?>
 </body>
