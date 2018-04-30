@@ -1,5 +1,3 @@
-$(document).ready(signOut());
-
 function onSignIn(googleUser) {
 // Useful data for your client-side scripts:
     var profile = googleUser.getBasicProfile();
@@ -25,7 +23,7 @@ function onSignIn(googleUser) {
     */
     
     updateSession (profile.getId());
-    redirectURL ("/main.html");
+    //redirectURL ("/main.html");
 }
 
 function signOut() {
@@ -45,6 +43,11 @@ function updateSession (id) {
     };
     xmlhttp.open ("GET", "/php/login-cache.php?id=" + id, true);
     xmlhttp.send ();
+}
+
+function checkSignIn () {
+    var a = <?php echo $id ?>;
+    alert (a);
 }
 
 function redirectURL (url) {
