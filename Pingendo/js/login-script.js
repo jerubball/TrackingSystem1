@@ -33,7 +33,7 @@ function updateProfile (profile) {
         }
     };
     xmlhttp.open ("GET", "/php/login-profile.php?id=" + profile.getId() + 
-        "&first=" + profile.getGivenName() + "&last=" + profile.getFamilyName() + "&email=" + profile.getEmail()", true);
+        "&first=" + profile.getGivenName() + "&last=" + profile.getFamilyName() + "&email=" + profile.getEmail(), true);
     xmlhttp.send ();
 }
 
