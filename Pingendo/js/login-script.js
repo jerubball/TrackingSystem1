@@ -14,14 +14,15 @@ function onSignIn(googleUser) {
 /*
     $.post("savesettings.php",
     {
-        idtoken: id_token,
+        idtoken: id_token,// this gives different tokens so replace with profile.getID(),
         fname: profile.getGivenName(),
         lname: profile.getFamilyName(),
         email: profile.getEmail(),
     });
-    console.log("after.post");
+
     */
     
+    updateProfile (profile);
     updateSession (profile.getId());
     //redirectURL ("main.html");
 }
@@ -32,6 +33,18 @@ function signOut() {
     console.log('User signed out.');
     updateSession ("");
     });
+}
+
+function updateProfile (profile) {
+    var xmlhttp = new XMLHttpRequest ();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            //alert (this.responseText);
+        }
+    };
+    xmlhttp.open ("GET", "/php/login-profile.php?id=" + profile.getId() + 
+        "&first=" + profile.getGivenName() + "&last=" + profile.getFamilyName() + "&email=profile.getEmail()", true);
+    xmlhttp.send ();
 }
 
 function updateSession (id) {
@@ -46,27 +59,54 @@ function updateSession (id) {
 }
 
 function checkSignIn () {
-    var xmlhttp1 = new XMLHttpRequest ();
-    xmlhttp1.onreadystatechange = function () {
+    var xmlhttp = new XMLHttpRequest ();
+    xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             //alert (this.responseText);
             if (this.responseText) {
-                var xmlhttp2 = new XMLHttpRequest ();
-                xmlhttp2.onreadystatechange = function () {
-                    if (this.readyState == 4 && this.status == 200) {
-                        alert (this.responseText);
-                    }
-                };
-                xmlhttp2.open ("GET", "/php/login-find.php", true);
-                xmlhttp2.send ();
+                checkNewUser ();
             }
             else {
                 alert ("You are not signed in.");
             }
         }
     };
-    xmlhttp1.open ("GET", "/php/login-cache.php?id=check", true);
-    xmlhttp1.send ();
+    xmlhttp.open ("GET", "/php/login-cache.php?id=check", true);
+    xmlhttp.send ();
+}
+
+function checkNewUser () {
+    var xmlhttp = new XMLHttpRequest ();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            //alert (this.responseText);
+            if (this.responseText == "0") {
+                alert ("Your account was never set before.\nPlease enter your information in settings page.");
+                addNewUser ();
+                //redirectURL("setting.html");
+            }
+            else {
+                //redirectURL("map.html");
+            }
+        }
+    };
+    xmlhttp.open ("GET", "/php/login-find.php", true);
+    xmlhttp.send ();
+}
+
+function addNewUser () {
+    var xmlhttp = new XMLHttpRequest ();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            alert (this.responseText);
+            /*if (this.responseText) {
+                redirectURL("error.html");
+            }
+            */
+        }
+    };
+    xmlhttp.open ("GET", "/php/login-new.php", true);
+    xmlhttp.send ();
 }
 
 function redirectURL (url) {
