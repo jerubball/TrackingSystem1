@@ -4,13 +4,12 @@
 <h1>Your Information has been updated</h1>
 
 <?php
-$fName = $_POST["first_name"];
-if(is_null($fName))// User came to this page by using Create Group 
+if(isset($_POST["send"];))// User came to this page by using Create Group 
 {
-	$street = $_POST["street"];
+	  $street = $_POST["street"];
       $city = $_POST["city"];
 	  $state = $_POST["state"];
-	  $zip = $_POST("zip");
+	  $zip = $_POST["zip"];
 	  echo "The following has been updated:" . $street . " " . $city . " " .$state . " " .$zip;
 	 mysqli_query($conn, "INSERT INTO family_group(Group_ID,Street_Address, City_Address, State_Address, Zip_Address)
               VALUES(DEFAULT, " . $street .", ". $city . ", " . $state . ", " . $zip . ")");
