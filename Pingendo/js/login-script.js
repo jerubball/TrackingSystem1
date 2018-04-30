@@ -46,20 +46,27 @@ function updateSession (id) {
 }
 
 function checkSignIn () {
-    var xmlhttp = new XMLHttpRequest ();
-    xmlhttp.onreadystatechange = function () {
+    var xmlhttp1 = new XMLHttpRequest ();
+    xmlhttp1.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             //alert (this.responseText);
             if (this.responseText) {
-                redirectURL ("main.html");
+                var xmlhttp2 = new XMLHttpRequest ();
+                xmlhttp2.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        alert (this.responseText);
+                    }
+                };
+                xmlhttp2.open ("GET", "/php/login-find.php", true);
+                xmlhttp2.send ();
             }
             else {
                 alert ("You are not signed in.");
             }
         }
     };
-    xmlhttp.open ("GET", "/php/login-cache.php?id=check", true);
-    xmlhttp.send ();
+    xmlhttp1.open ("GET", "/php/login-cache.php?id=check", true);
+    xmlhttp1.send ();
 }
 
 function redirectURL (url) {
