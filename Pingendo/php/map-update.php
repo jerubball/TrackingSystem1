@@ -1,5 +1,7 @@
 <?php
 
+session_start ();
+
 $lat = floatval ($_GET['lat']);
 $lon = floatval ($_GET['lon']);
 
