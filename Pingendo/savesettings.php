@@ -9,7 +9,7 @@ $conn = new mysqli($servername, $username, $password, $dbname); // Create connec
 if ($conn->connect_error) {     // Check connection
     die("Connection failed: " . $conn->connect_error);
 } 
-$idtoken = mysqli_real_escape_string($conn, $_POST['idtoken']);
+$idtoken = mysqli_real_escape_string($conn, $_POST['idtoken']);	//checking for existing account
 $sql = "SELECT Account_ID FROM account_info WHERE Account_Token = '$idtoken'";
     $result = mysqli_query($db,$sql);
 
@@ -19,10 +19,10 @@ $sql = "SELECT Account_ID FROM account_info WHERE Account_Token = '$idtoken'";
       
 
 		
-if($count == 1) {
+if($count == 1) {	//if the account token already exist a new entry wont be made into databse
 	 header("location: main.html");
 }
-else{
+else{	// account saved into database
 	
 $fname = mysqli_real_escape_string($conn, $_POST['fname']);
 $lname = mysqli_real_escape_string($conn, $_POST['lname']);
