@@ -4,7 +4,7 @@
 <h1>Your Information has been updated</h1>
 
 <?php
-if(isset($_POST["send"];))// User came to this page by using Create Group 
+if(isset($_POST["send"]))// User came to this page by using Create Group 
 {
 	  $street = $_POST["street"];
       $city = $_POST["city"];
