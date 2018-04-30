@@ -4,7 +4,8 @@
 <h1>Your Information has been updated</h1>
 
 <?php
-if(is_null($_POST("first_name")) )// User came to this page by using Create Group 
+$fName = $_POST("first_name");
+if(is_null($fName))// User came to this page by using Create Group 
 {
 	$street = $_POST["street"];
       $city = $_POST["city"];
