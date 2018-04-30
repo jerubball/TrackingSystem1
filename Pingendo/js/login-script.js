@@ -54,7 +54,14 @@ function checkSignIn () {
                 var xmlhttp2 = new XMLHttpRequest ();
                 xmlhttp2.onreadystatechange = function () {
                     if (this.readyState == 4 && this.status == 200) {
-                        alert (this.responseText);
+                        //alert (this.responseText);
+                        if (this.responseText == "0") {
+                            alert ("Your account was never set before.\nPlease enter your information in settings page.");
+                            redirectURL("setting.html");
+                        }
+                        else {
+                            redirectURL("main.html");
+                        }
                     }
                 };
                 xmlhttp2.open ("GET", "/php/login-find.php", true);
