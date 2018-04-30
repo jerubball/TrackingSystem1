@@ -25,7 +25,7 @@ if (isset($_SESSION['id'])) {
     $row = mysqli_fetch_assoc($ans);
     $num = $row['num'];
     
-    $echo $num;
+    echo $num;
     
     //$now = time();
     //$sql = "INSERT INTO Child_Tracker.location VALUES ($usr, FROM_UNIXTIME($now), $lat, $lon, 'Normal')";
