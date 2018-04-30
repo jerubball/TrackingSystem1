@@ -2,7 +2,12 @@
 
 session_start ();
 
-$id = $_SESSION['ID'];
+if (isset $_SESSION['ID']) {
+    $id = $_SESSION['ID'];
+}
+else {
+    echo "ID is not set"
+}
 
 $lat = floatval ($_GET['lat']);
 $lon = floatval ($_GET['lon']);

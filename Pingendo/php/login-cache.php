@@ -5,7 +5,12 @@ session_start ();
 $id = $_GET['id'];
 //$token = $_GET['token'];
 
-$_SESSION['ID'] = $id;
+if ($id == "") {
+    unset($_SESSION['ID']);
+}
+else {
+    $_SESSION['ID'] = $id;
+}
 
 echo $id;
 
