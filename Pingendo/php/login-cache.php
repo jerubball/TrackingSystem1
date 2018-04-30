@@ -10,7 +10,12 @@ if ($id == "") {
     echo "ID unset";
 }
 else if ($id == "check") {
-    echo isset($_SESSION['ID']);
+    if (isset($_SESSION['ID'])) {
+        echo true;
+    }
+    else {
+        echo false;
+    }
 }
 else {
     $_SESSION['ID'] = $id;

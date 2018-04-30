@@ -50,6 +50,12 @@ function checkSignIn () {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             alert (this.responseText);
+            if (this.responseText) {
+                redirectURL ("/main.html");
+            }
+            else {
+                alert ("You are not signed in.");
+            }
         }
     };
     xmlhttp.open ("GET", "/php/login-cache.php?id=check", true);
