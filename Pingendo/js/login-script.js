@@ -69,10 +69,26 @@ function checkNewUser () {
             //alert (this.responseText);
             if (this.responseText == "0") {
                 alert ("Your account was never set before.\nPlease enter your information in settings page.");
+                //addNewUser ();
+                alert (profile.getID ();
                 redirectURL("setting.html");
             }
             else {
                 redirectURL("main.html");
+            }
+        }
+    };
+    xmlhttp.open ("GET", "/php/login-find.php", true);
+    xmlhttp.send ();
+}
+
+function addNewUser () {
+    var xmlhttp = new XMLHttpRequest ();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            //alert (this.responseText);
+            if (this.responseText) {
+                redirectURL("error.html");
             }
         }
     };

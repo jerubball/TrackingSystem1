@@ -11,9 +11,8 @@ function checkLogin () {
                 checkGroup ();
             }
             else {
-                alert ("You are not signed in.");
+                alert ("You are not signed in.\nPlease sign in.");
                 redirectURL ("login.html");
-                
             }
         }
     };
