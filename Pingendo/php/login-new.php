@@ -18,9 +18,12 @@ if (isset($_SESSION['id'])) {
       die ("Connection failed: " . $conn -> connect_error);
     }
     
-    $sql = "INSERT INTO Child_Tracker.account_info VALUES (DEFAULT, $id, $first, $last, $email, NULL, NULL, NULL)";
+    //$sql = "INSERT INTO Child_Tracker.account_info VALUES (DEFAULT, $id, $first, $last, $email, NULL, NULL, NULL)";
+    $sql = "SELECT * FROM Child_Tracker.account_info LIMIT 1";
     $ans = $conn -> query($sql);
-    echo $id." ".$first." ".$last." ".$email;
+    //echo $id." ".$first." ".$last." ".$email;
+    $row = mysqli_fetch_assoc($ans);
+    echo $row['Account_ID'];
     mysqli_close($conn);
 }
 
