@@ -20,7 +20,7 @@ else // User came to this page by using Create Group
 	  $state = $_POST["state"];
 	  $zip = $_POST("zip");
 	  echo "The following has been updated:" . $street . " " . $city . " " .$state . " " .$zip;
-	  mysqli_query($dbc, "INSERT INTO family_group(Street_Address, City_Address, State_Address, Zip_Address)
+	  mysqli_query($dbc, "INSERT INTO family_group(DEFAULT,Street_Address, City_Address, State_Address, Zip_Address)
 						  VALUES(" . $street .", ". $city . ", " . $state . ", " . $zip . ")")
 }
 
