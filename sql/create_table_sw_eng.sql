@@ -15,7 +15,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- Schema Child_Tracker
 -- -----------------------------------------------------
 
--- DROP SCHEMA `Child_Tracker` ;
+DROP SCHEMA `Child_Tracker` ;
 CREATE SCHEMA IF NOT EXISTS `Child_Tracker` ;
 USE `Child_Tracker` ;
 
@@ -37,13 +37,13 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Child_Tracker`.`account_info` (
   `Account_ID` INT NOT NULL AUTO_INCREMENT,
-  `Account_Token` TEXT NULL,
+  `Google_UID` VARCHAR(100) NULL,
   `First_Name` VARCHAR(100) NULL,
   `Last_Name` VARCHAR(100) NULL,
   `Email` VARCHAR(100) NOT NULL,
-  `Group_ID` INT NOT NULL,
   `Gender` ENUM('Male', 'Female') NULL,
   `Account_Type` ENUM('Parent', 'Child') NOT NULL,
+  `Group_ID` INT NULL,
   PRIMARY KEY (`Account_ID`),
   INDEX `Group_ID_idx` (`Group_ID` ASC),
   CONSTRAINT `Group_ID`
@@ -58,12 +58,12 @@ ENGINE = InnoDB;
 -- Table `Child_Tracker`.`location`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Child_Tracker`.`location` (
+  `Account_ID` INT NOT NULL,
   `Time` DATETIME NOT NULL,
   `Longitude` FLOAT NOT NULL,
   `Latitude` FLOAT NOT NULL,
   `Status` ENUM('Normal', 'Emergency') NOT NULL,
-  `Account_ID` INT NOT NULL,
-  PRIMARY KEY (`Time`, `Account_ID`),
+  PRIMARY KEY (`Account_ID`, `Time`),
   INDEX `Account_ID_idx` (`Account_ID` ASC),
   CONSTRAINT `Account_ID`
     FOREIGN KEY (`Account_ID`)
