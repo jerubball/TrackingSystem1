@@ -17,9 +17,13 @@ function showMap1 (position) {
       var centers = [];
       for (var i = 0; i < coords.length; i++) {
           var coord = coords[i].split(",");
-          alert (parseFloat(coord[0]) + ", " + parseFloat(coord[1]));
+          //alert (parseFloat(coord[0]) + ", " + parseFloat(coord[1]));
           centers.push (new google.maps.LatLng(parseFloat(coord[0]), parseFloat(coord[1])));
       }
+      var myCenter = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      var mapCanvas = document.getElementById("map1");
+      var mapOptions = {center: myCenter, zoom: 12};
+      var map = new google.maps.Map(mapCanvas, mapOptions);
       var flightPath = new google.maps.Polyline({
         path: centers,
         strokeColor: "#0000FF",
@@ -27,10 +31,6 @@ function showMap1 (position) {
         strokeWeight: 2
       });
       flightPath.setMap(map);
-      var myCenter = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-      var mapCanvas = document.getElementById("map1");
-      var mapOptions = {center: myCenter, zoom: 12};
-      var map = new google.maps.Map(mapCanvas, mapOptions);
       var marker = new google.maps.Marker({position:myCenter});
       marker.setMap(map);
       var infowindow = new google.maps.InfoWindow({
