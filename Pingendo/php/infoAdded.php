@@ -1,8 +1,8 @@
 <html>
 <body>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
+<h1>Your Information has been updated</h1>
+
 <?php
 
       $fName = $_POST["first_name"];
@@ -10,7 +10,7 @@
 	  $gender = $_POST["gender"];
 	  $email = $_POST["email"];
 	  
-	  echo "The following has been updated:" . $fName . $lName . $gender . $email;
+	  echo "The following has been updated:" . $fName . " " . $lName . " " .$gender . " " .$email;
     
 
 // leave for now require_once('../mysqli_connect.php');
