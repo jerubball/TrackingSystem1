@@ -5,8 +5,12 @@
 <p>My first paragraph.</p>
 <?php
 
-        echo $_POST["first_name"];
-        
+      $fName = $_POST["first_name"];
+      $lName = $_POST["last_name"];
+	  $gender = $_POST["gender"];
+	  $email = $_POST["email"];
+	  
+	  echo "The following has been updated:" . $fName . $lName . $gender . $email;
     
 
 // leave for now require_once('../mysqli_connect.php');
