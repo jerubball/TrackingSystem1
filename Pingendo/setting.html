@@ -58,24 +58,21 @@
           <form action="php/infoAdded.php" method="post" class="text-primary">
             <div class="form-group border-primary">
               <label for="exampleInputEmail1" value="">First Name</label>
-              <input type="text" class="form-control"  value="" name="first_name" placeholder="Jane Doe"> </div>
+              <input type="text" class="form-control" value="" name="first_name" placeholder="Enter First Name"> </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Last Name</label>
-              <input type="text" class="form-control"  name="last_name" placeholder="Jane Doe" value=""> </div>
+              <input type="text" class="form-control"  name="last_name" placeholder="Enter Last Name" value=""> </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Gender</label>
-              <input type="text" class="form-control"  name="gender" placeholder="Jane Doe" value=""> </div>
+              <input type="text" class="form-control"  name="gender" placeholder="Enter Gender" value=""> </div>
             <div class="form-group">
               <label>Email address</label>
               <input type="email" class="form-control" placeholder="Enter email" value="" name="email">
               <small class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">
-              <label>Address</label>
-              <input type="password" class="form-control" placeholder="Password" value=""> </div>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Phone Number</label>
-              <input type="text" class="form-control" placeholder="Jane Doe" value=""> </div>
+              <label for="exampleInputEmail1" name = "number">Phone Number</label>
+              <input type="text" class="form-control"  placeholder="(000)-123-4567" value=""> </div>
             <button type="submit" value="send" class="btn btn-primary p-2 w-25 mx-auto">Submit</button>
           </form>
         </div>
@@ -119,25 +116,25 @@
       </div>
     </div>
   </div>
-  <div class="py-5">
+  <div class="py-5"style="display:none" id="address" >
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <form class="" id="address" style="display:none">
+          <form action="php/infoAdded.php" method ="post" >
             <div class="form-group">
               <label>Street Address</label>
-              <input type="email" class="form-control" placeholder="Enter Street">
+              <input name="address" class="form-control" placeholder="Enter Street" value="">
               <small class="form-text text-muted"></small>
             </div>
             <div class="form-group">
               <label>City</label>
-              <input type="text" class="form-control" placeholder="Enter City"> </div>
+              <input type="text" class="form-control" placeholder="Enter City" name ="city" value=""> </div>
             <div class="form-group">
               <label for="exampleInputEmail1">State</label>
-              <input type="text" class="form-control"  placeholder="Enter State"> </div>
+              <input type="text" class="form-control"  placeholder="Enter State"value ="" name="state"> </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Zip Code</label>
-              <input type="text" class="form-control"  placeholder="Enter Zip Code"> </div>
+              <input type="text" class="form-control"  placeholder="Enter Zip Code" value="" name = "zip"> </div>
             <button type="submit" value="send"class="btn btn-primary">Submit</button>
           </form>
         </div>
