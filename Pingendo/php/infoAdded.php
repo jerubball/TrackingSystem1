@@ -4,6 +4,11 @@
 <h1>Your Information has been updated</h1>
 
 <?php
+$servername = "him-nyit.ddns.net";
+$username = "admin";
+$password = "13579";
+$dbname = "Child_Tracker";
+
 if(isset($_POST["send"]))// User came to this page by using Create Group 
 {
 	  $street = $_POST["street"];
@@ -11,6 +16,7 @@ if(isset($_POST["send"]))// User came to this page by using Create Group
 	  $state = $_POST["state"];
 	  $zip = $_POST["zip"];
 	  echo "The following has been updated:" . $street . " " . $city . " " .$state . " " .$zip;
+	  $conn = new mysqli($servername, $username, $password, $dbname);
 	 mysqli_query($conn, "INSERT INTO family_group(Group_ID,Street_Address, City_Address, State_Address, Zip_Address)
               VALUES(DEFAULT, " . $street .", ". $city . ", " . $state . ", " . $zip . ")");
       
