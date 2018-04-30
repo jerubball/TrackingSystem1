@@ -23,7 +23,7 @@ if(isset($_POST["send"]))// User came to this page by using Create Group
 	  $zip = $_POST["zip"];
 	  echo "The following has been updated:" . $street . " " . $city . " " .$state . " " .$zip;
 	 mysqli_query($conn, "INSERT INTO family_group(Group_ID,Street_Address, City_Address, State_Address, Zip_Address)
-              VALUES(DEFAULT, " . $street .", ". $city . ", " . $state . ", " . $zip . ")");
+              VALUES(DEFAULT, '" . $street ."', '". $city . "', '" . $state . "', '" . $zip . "')");
       
 }
 else // If the user came to this page by using edit account info
@@ -34,7 +34,7 @@ else // If the user came to this page by using edit account info
 	  $email = $_POST["email"];
 	  echo "The following has been updated:" . $fName . " " . $lName . " " .$gender . " " .$email;
 	  mysqli_query($conn, "UPDATE INTO account_info( First_Name, Last_Name, Email, Gender)
-						  VALUES(" . $fName . ", " . $lName . ", " . $email . ", " . $gender . ",)");
+						  VALUES('" . $fName . "', '" . $lName . "', '" . $email . "', '" . $gender . "')");
 }
 
 /**
