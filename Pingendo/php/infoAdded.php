@@ -5,7 +5,7 @@
 <p>My first paragraph.</p>
 <?php
 
-        echo $_POST["first_name"]);
+        echo $_POST["first_name"];
         
     
 
