@@ -27,7 +27,7 @@ function checkUser () {
             //alert (this.responseText);
             if (this.responseText == "0") {
                 alert ("Your account was never set before.\nPlease sign in once.");
-                redirectURL("setting.html");
+                redirectURL("login.html");
             }
             else {
                 checkGroup ();
