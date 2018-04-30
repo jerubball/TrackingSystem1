@@ -46,8 +46,14 @@ function updateSession (id) {
 }
 
 function checkSignIn () {
-    var a = <?php echo $id ?>;
-    alert (a);
+    var xmlhttp = new XMLHttpRequest ();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            alert (this.responseText);
+        }
+    };
+    xmlhttp.open ("GET", "/php/login-cache.php?id=check", true);
+    xmlhttp.send ();
 }
 
 function redirectURL (url) {
