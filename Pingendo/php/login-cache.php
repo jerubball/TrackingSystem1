@@ -7,11 +7,19 @@ $id = $_GET['id'];
 
 if ($id == "") {
     unset($_SESSION['ID']);
+    echo "ID unset";
+}
+else if ($id == "check") {
+    if (isset($_SESSION['ID'])) {
+        echo true;
+    }
+    else {
+        echo false;
+    }
 }
 else {
     $_SESSION['ID'] = $id;
+    echo $id;
 }
-
-echo $id;
 
 ?>
