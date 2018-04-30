@@ -15,7 +15,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- Schema Child_Tracker
 -- -----------------------------------------------------
 
-DROP SCHEMA `Child_Tracker` ;
+-- DROP SCHEMA `Child_Tracker` ;
 CREATE SCHEMA IF NOT EXISTS `Child_Tracker` ;
 USE `Child_Tracker` ;
 
