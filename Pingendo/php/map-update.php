@@ -6,7 +6,7 @@ if (isset($_SESSION['ID'])) {
     $id = $_SESSION['ID'];
 }
 else {
-    echo "ID is not set"
+    echo "ID is not set";
 }
 
 $lat = floatval ($_GET['lat']);
