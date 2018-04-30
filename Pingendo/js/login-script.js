@@ -71,10 +71,10 @@ function checkNewUser () {
                 alert ("Your account was never set before.\nPlease enter your information in settings page.");
                 //addNewUser ();
                 alert (profile.getID ());
-                redirectURL("setting.html");
+                //redirectURL("setting.html");
             }
             else {
-                redirectURL("main.html");
+                //redirectURL("map.html");
             }
         }
     };
