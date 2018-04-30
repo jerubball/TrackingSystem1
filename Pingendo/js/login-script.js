@@ -23,7 +23,7 @@ function onSignIn(googleUser) {
     */
     
     updateSession (profile.getId());
-    //redirectURL ("/main.html");
+    //redirectURL ("main.html");
 }
 
 function signOut() {
@@ -51,7 +51,7 @@ function checkSignIn () {
         if (this.readyState == 4 && this.status == 200) {
             //alert (this.responseText);
             if (this.responseText) {
-                redirectURL ("/main.html");
+                redirectURL ("main.html");
             }
             else {
                 alert ("You are not signed in.");
