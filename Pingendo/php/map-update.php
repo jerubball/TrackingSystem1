@@ -22,7 +22,7 @@ if (isset($_SESSION['id'])) {
     $sql = "INSERT INTO Child_Tracker.test VALUES (DEFAULT, $id, $lat, $lon, FROM_UNIXTIME($now))";
     $ans = $conn -> query($sql);
     echo $id;
-    
+    mysqli_close($conn);
 }
 
 ?>

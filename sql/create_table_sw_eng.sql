@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `Child_Tracker`.`account_info` (
   `Last_Name` VARCHAR(100) NULL,
   `Email` VARCHAR(100) NOT NULL,
   `Gender` ENUM('Male', 'Female') NULL,
-  `Account_Type` ENUM('Parent', 'Child') NOT NULL,
+  `Account_Type` ENUM('Parent', 'Child') NULL,
   `Group_ID` INT NULL,
   PRIMARY KEY (`Account_ID`),
   INDEX `Group_ID_idx` (`Group_ID` ASC),

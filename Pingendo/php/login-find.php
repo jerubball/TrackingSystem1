@@ -19,6 +19,7 @@ if (isset($_SESSION['id'])) {
     $ans = $conn -> query($sql);
     $row = mysqli_fetch_assoc($ans);
     echo $row['entries'];
+    mysqli_close($conn);
 }
 
 ?>

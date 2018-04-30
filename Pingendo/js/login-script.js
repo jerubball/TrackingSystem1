@@ -21,18 +21,8 @@ function onSignIn(googleUser) {
     });
 
     */
-    
     updateProfile (profile);
-    updateSession (profile.getId());
     //redirectURL ("main.html");
-}
-
-function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-    console.log('User signed out.');
-    updateSession ("");
-    });
 }
 
 function updateProfile (profile) {
@@ -43,8 +33,16 @@ function updateProfile (profile) {
         }
     };
     xmlhttp.open ("GET", "/php/login-profile.php?id=" + profile.getId() + 
-        "&first=" + profile.getGivenName() + "&last=" + profile.getFamilyName() + "&email=profile.getEmail()", true);
+        "&first=" + profile.getGivenName() + "&last=" + profile.getFamilyName() + "&email=" + profile.getEmail(), true);
     xmlhttp.send ();
+}
+
+function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+    console.log('User signed out.');
+    updateSession ("");
+    });
 }
 
 function updateSession (id) {
@@ -83,10 +81,10 @@ function checkNewUser () {
             if (this.responseText == "0") {
                 alert ("Your account was never set before.\nPlease enter your information in settings page.");
                 addNewUser ();
-                //redirectURL("setting.html");
+                redirectURL("setting.html");
             }
             else {
-                //redirectURL("map.html");
+                redirectURL("map.html");
             }
         }
     };
@@ -98,7 +96,7 @@ function addNewUser () {
     var xmlhttp = new XMLHttpRequest ();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            alert (this.responseText);
+            //alert (this.responseText);
             /*if (this.responseText) {
                 redirectURL("error.html");
             }
