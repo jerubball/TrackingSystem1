@@ -38,7 +38,7 @@ function updateSession (id) {
     var xmlhttp = new XMLHttpRequest ();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            //alert (this.responseText);
+            alert (this.responseText);
         }
     };
     xmlhttp.open ("GET", "/php/login-cache.php?id=" + id, true);
@@ -66,7 +66,7 @@ function checkNewUser () {
     var xmlhttp = new XMLHttpRequest ();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            //alert (this.responseText);
+            alert (this.responseText);
             if (this.responseText == "0") {
                 alert ("Your account was never set before.\nPlease enter your information in settings page.");
                 //addNewUser ();

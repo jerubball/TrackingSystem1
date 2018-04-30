@@ -2,7 +2,6 @@
 
 session_start ();
 
-
 $db_server = "localhost:3306";
 $db_user = "admin";
 $db_pass = "13579";
