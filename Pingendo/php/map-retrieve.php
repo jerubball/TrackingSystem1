@@ -27,13 +27,8 @@ if (isset($_SESSION['id'])) {
     
     $sql = "SELECT * FROM Child_Tracker.location WHERE Account_ID = " . $usr;
     $ans = $conn -> query($sql);
-    if ($ans->num_rows > 0) {
-    // output data of each row
-        while($row = $ans->fetch_assoc()) {
-            echo "id: " . $row['Account_ID']. " - Lat: " . $row['Latitude']. " Lon: " . $row['Longitude']. " ;\n";
-        }
-    } else {
-        echo "0 results";
+    while($row = $ans->fetch_assoc()) {
+        echo $row['Latitude']. "," . $row['Longitude']. ";\n";
     }
     $conn -> close();
 }
