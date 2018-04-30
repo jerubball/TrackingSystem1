@@ -14,11 +14,11 @@ function showMap1 (position) {
     if (this.readyState == 4 && this.status == 200) {
       //alert (this.responseText);
       var coords = this.responseText.split(";");
-      var centers;
+      var centers = [];
       for (var i = 0; i < coords.length; i++) {
           var coord = coords[i].split(",");
           alert (parseFloat(coord[0]) + ", " + parseFloat(coord[1]));
-          centers[i] = new google.maps.LatLng(parseFloat(coord[0]), parseFloat(coord[1]));
+          centers.push (new google.maps.LatLng(parseFloat(coord[0]), parseFloat(coord[1])));
       }
       var flightPath = new google.maps.Polyline({
         path: centers,
