@@ -5,7 +5,7 @@ session_start ();
 $db_server = "localhost:3306";
 $db_user = "admin";
 $db_pass = "13579";
-/*
+
 if (isset($_SESSION['id'])) {
     $id = $_SESSION['id'];
     
@@ -20,14 +20,19 @@ if (isset($_SESSION['id'])) {
     $row = mysqli_fetch_assoc($ans);
     $usr = $row['Account_ID'];
     
-    $sql = "SELECT "
-    
-    $now = time();
-    $sql = "INSERT INTO Child_Tracker.location VALUES ($usr, FROM_UNIXTIME($now), $lat, $lon, 'Normal')";
+    $sql = "SELECT COUNT(*) AS num FROM Child_Tracker.location WHERE Account_ID = " . $usr;
     $ans = $conn -> query($sql);
-    echo $id;
+    $row = mysqli_fetch_assoc($ans);
+    $num = $row['num'];
+    
+    echo $num;
+    
+    //$now = time();
+    //$sql = "INSERT INTO Child_Tracker.location VALUES ($usr, FROM_UNIXTIME($now), $lat, $lon, 'Normal')";
+    //$ans = $conn -> query($sql);
+    //echo $id;
     mysqli_close($conn);
 }
-*/
+
 
 ?>
