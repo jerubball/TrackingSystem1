@@ -11,7 +11,7 @@ function onSignIn(googleUser) {
 // The ID token you need to pass to your backend:
     var id_token = googleUser.getAuthResponse().id_token;
     console.log("ID Token: " + id_token);
-
+/*
     $.post("savesettings.php",
     {
         idtoken: id_token,
@@ -20,11 +20,26 @@ function onSignIn(googleUser) {
         email: profile.getEmail(),
     });
     console.log("after.post");
+    */
+    
+    updateSession (profile.getId());
 }
 
 function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
     console.log('User signed out.');
+    updateSession ("");
     });
+}
+
+function updateSession (id) {
+    var xmlhttp = new XMLHttpRequest ();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            alert (this.responseText);
+        }
+    };
+    xmlhttp.open ("GET", "/php/login-cache.php?id=" + id, true);
+    xmlhttp.send ();
 }

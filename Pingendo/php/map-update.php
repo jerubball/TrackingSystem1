@@ -2,6 +2,8 @@
 
 session_start ();
 
+$id = $_SESSION['ID'];
+
 $lat = floatval ($_GET['lat']);
 $lon = floatval ($_GET['lon']);
 
@@ -12,7 +14,7 @@ if ($conn -> connect_error) {
 }
 
 $now = time();
-$sql = "INSERT INTO Child_Tracker.test VALUES (DEFAULT, $lat, $lon, FROM_UNIXTIME($now))";
+$sql = "INSERT INTO Child_Tracker.test VALUES (DEFAULT, $id, $lat, $lon, FROM_UNIXTIME($now))";
 $ans = $conn -> query($sql);
 echo $ans;
 
