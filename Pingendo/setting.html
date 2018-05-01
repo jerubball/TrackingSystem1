@@ -104,7 +104,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <a href="#groupBlock" class="btn btn-outline-primary" onclick="hideById('address')">Create Group</a>
+          <a id="groupBlockBtn" href="#groupBlock" class="btn btn-outline-primary" onclick="hideById('address')">Update Group</a>
         </div>
       </div>
     </div>
@@ -125,7 +125,7 @@
           <div class="form-group">
             <label>Zip Code</label>
             <input type="text" class="form-control" placeholder="Enter Zip Code" value="" id="addressZip" name="zip"> </div>
-          <button class="btn btn-primary">Submit</button>
+          <button class="btn btn-primary" onclick="updateGroup()">Submit</button>
         </div>
       </div>
     </div>

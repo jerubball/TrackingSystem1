@@ -24,7 +24,8 @@ if (isset($_SESSION['id'])) {
         $email = $row['Email'];
         $gender = $row['Gender'];
         $type = $row['Account_Type'];
-        echo $first . ";" . $last . ";" . $email . ";" . $gender . ";" . $type;
+        $group = $row['Group_ID'];
+        echo $first . ";" . $last . ";" . $email . ";" . $gender . ";" . $type . ";" . $group;
     } else {
         echo "No result for account.";
     }
