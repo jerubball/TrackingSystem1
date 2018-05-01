@@ -22,7 +22,7 @@ if (isset($_SESSION['id'])) {
     
     $sql = "UPDATE Child_Tracker.account_info SET First_Name='$first', Last_Name='$last', Email='$email', Gender='$gender' WHERE Google_UID = ".$id;
     $ans = $conn -> query($sql);
-    echo "Done".$fname;
+    echo "Done".$first;
     $conn -> close();
 }
 
