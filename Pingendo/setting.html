@@ -51,22 +51,22 @@
       </div>
     </div>
   </div>
-  <div class="py-2" id="account" style="display:block">
+  <div class="py-2" id="account" style="display:none">
     <div class="container">
       <div class="row">
         <div class="col-md-12 border p-2 text-primary">
           <div class="form-group">
-            <label for="first_name" value="">First Name</label>
-            <input id="accountFirst" type="text" class="form-control" value="" name="first_name" placeholder="Enter First Name"> </div>
+            <label>First Name</label>
+            <input id="accountFirst" type="text" class="form-control" placeholder="Enter First Name" value="" name="first_name"> </div>
           <div class="form-group">
-            <label for="last_name">Last Name</label>
-            <input id="accountLast" type="text" class="form-control" name="last_name" placeholder="Enter Last Name" value=""> </div>
+            <label>Last Name</label>
+            <input id="accountLast" type="text" class="form-control" placeholder="Enter Last Name" value="" name="last_name"> </div>
           <div class="form-group">
-            <label for="gender">Gender</label>
-            <input id="accountGender" type="text" class="form-control" name="gender" placeholder="Enter Gender" value=""> </div>
+            <label>Gender</label>
+            <input id="accountGender" type="text" class="form-control" placeholder="Enter Gender" value="" name="gender"> </div>
           <div class="form-group">
-            <label for="email">Email Address</label>
-            <input id="accountEmail" type="email" class="form-control" placeholder="Enter email" value="" name="email" disabled=""> </div>
+            <label>Email Address</label>
+            <input id="accountEmail" type="email" class="form-control" placeholder="Enter email" value="" disabled="" name="email"> </div>
           <button class="btn btn-primary" onclick="updateProfile()">Submit</button>
         </div>
       </div>
@@ -109,27 +109,23 @@
       </div>
     </div>
   </div>
-  <div class="py-2" style="display:none" id="address">
+  <div class="py-2" id="address" style="display:none">
     <div class="container">
       <div class="row">
-        <div class="col-md-12 border p-2">
-          <form action="php/infoAdded.php" method="block">
-            <div class="form-group">
-              <label>Street Address</label>
-              <input name="street" class="form-control" placeholder="Enter Street" value="">
-              <small class="form-text text-muted"></small>
-            </div>
-            <div class="form-group">
-              <label>City</label>
-              <input type="text" class="form-control" placeholder="Enter City" name="city" value=""> </div>
-            <div class="form-group">
-              <label for="exampleInputEmail1">State</label>
-              <input type="text" class="form-control" placeholder="Enter State" value="" name="state"> </div>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Zip Code</label>
-              <input type="text" class="form-control" placeholder="Enter Zip Code" value="" name="zip"> </div>
-            <button type="submit" name="send" value="send" class="btn btn-primary">Submit</button>
-          </form>
+        <div class="col-md-12 border p-2 text-primary">
+          <div class="form-group">
+            <label>Street Address</label>
+            <input placeholder="Enter Street" value="" class="form-control" type="text" id="addressStreet" name="street"> </div>
+          <div class="form-group">
+            <label>City</label>
+            <input type="text" class="form-control" placeholder="Enter City" value="" id="addressCity" name="city"> </div>
+          <div class="form-group">
+            <label>State</label>
+            <input type="text" class="form-control" placeholder="Enter State" value="" name="state" id="addressState"> </div>
+          <div class="form-group">
+            <label>Zip Code</label>
+            <input type="text" class="form-control" placeholder="Enter Zip Code" value="" id="addressZip" name="zip"> </div>
+          <button class="btn btn-primary">Submit</button>
         </div>
       </div>
     </div>
