@@ -32,7 +32,7 @@ if (isset($_SESSION['id'])) {
             echo $row['Latitude'] . "," . $row['Longitude']. ";\n";
         }
     } else {
-        echo "0 results";
+        echo "No result for Location.";
     }
     $conn -> close();
 }
