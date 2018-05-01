@@ -33,7 +33,7 @@
       </div>
     </div>
   </nav>
-  <div class="py-5">
+  <div class="py-2">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -42,41 +42,39 @@
       </div>
     </div>
   </div>
-  <div class="py-5" id="accountinfo">
+  <div class="pt-4 pb-2" id="acctInfoBlock">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <a href="#accountinfo" onclick="hideById('acctInfo')" class="btn btn-outline-primary">Edit Account Information</a>
+          <a href="#acctInfoBlock" onclick="hideById('acctInfo')" class="btn btn-outline-primary">Edit Account Information</a>
         </div>
       </div>
     </div>
   </div>
-  <div class="py-5" id="acctInfo" style="display:none">
+  <div class="py-2" id="acctInfo" style="display:none">
     <div class="container">
       <div class="row">
-        <div class="col-md-12 border">
-          <form action="php/infoAdded.php" method="post" class="text-primary">
-            <div class="form-group border-primary">
-              <label for="exampleInputEmail1" value="">First Name</label>
+        <div class="col-md-12 border p-2">
+          <form class="text-primary">
+            <div class="form-group">
+              <label for="first_name" value="">First Name</label>
               <input type="text" class="form-control" value="" name="first_name" placeholder="Enter First Name"> </div>
             <div class="form-group">
-              <label for="exampleInputEmail1">Last Name</label>
-              <input type="text" class="form-control"  name="last_name" placeholder="Enter Last Name" value=""> </div>
+              <label for="last_name">Last Name</label>
+              <input type="text" class="form-control" name="last_name" placeholder="Enter Last Name" value=""> </div>
             <div class="form-group">
-              <label for="exampleInputEmail1">Gender</label>
-              <input type="text" class="form-control"  name="gender" placeholder="Enter Gender" value=""> </div>
+              <label for="gender">Gender</label>
+              <input type="text" class="form-control" name="gender" placeholder="Enter Gender" value=""> </div>
             <div class="form-group">
-              <label>Email address</label>
-              <input type="email" class="form-control" placeholder="Enter email" value="" name="email">
-              <small class="form-text text-muted">We'll never share your email with anyone else.</small>
-            </div>
-            <button type="submit" value="send" class="btn btn-primary p-2 w-25 mx-auto">Submit</button>
+              <label for="email">Email Address</label>
+              <input type="email" class="form-control" placeholder="Enter email" value="" name="email" disabled=""> </div>
+            <button type="submit" value="send" class="btn btn-primary">Submit</button>
           </form>
         </div>
       </div>
     </div>
   </div>
-  <div class="py-5">
+  <div class="pt-4 pb-2">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
@@ -95,7 +93,7 @@
       </div>
     </div>
   </div>
-  <div class="py-5">
+  <div class="pt-4 pb-2">
     <div class="container">
       <div class="row">
         <div class="col-md-5" style="transition: all 0.25s;">
@@ -104,20 +102,20 @@
       </div>
     </div>
   </div>
-  <div class="py-5" id="groupinfo">
+  <div class="pt-4 pb-2" id="groupInfoBtn">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <a href="#groupinfo" class="btn btn-outline-primary w-25" onclick="hideById('address')">Create Group</a>
+          <a href="#groupInfoBtn" class="btn btn-outline-primary" onclick="hideById('address')">Create Group</a>
         </div>
       </div>
     </div>
   </div>
-  <div class="py-5" style="display:none" id="address" >
+  <div class="py-2" style="display:none" id="address">
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
-          <form action="php/infoAdded.php" method ="post" >
+        <div class="col-md-12 border p-2">
+          <form action="php/infoAdded.php" method="post">
             <div class="form-group">
               <label>Street Address</label>
               <input name="street" class="form-control" placeholder="Enter Street" value="">
@@ -125,14 +123,14 @@
             </div>
             <div class="form-group">
               <label>City</label>
-              <input type="text" class="form-control" placeholder="Enter City" name ="city" value=""> </div>
+              <input type="text" class="form-control" placeholder="Enter City" name="city" value=""> </div>
             <div class="form-group">
               <label for="exampleInputEmail1">State</label>
-              <input type="text" class="form-control"  placeholder="Enter State"value ="" name="state"> </div>
+              <input type="text" class="form-control" placeholder="Enter State" value="" name="state"> </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Zip Code</label>
-              <input type="text" class="form-control"  placeholder="Enter Zip Code" value="" name = "zip"> </div>
-            <button type="submit" name="send" value="send"class="btn btn-primary">Submit</button>
+              <input type="text" class="form-control" placeholder="Enter Zip Code" value="" name="zip"> </div>
+            <button type="submit" name="send" value="send" class="btn btn-primary">Submit</button>
           </form>
         </div>
       </div>
@@ -145,7 +143,7 @@
   <script src="/js/check-login.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 10px;right:10px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:180px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo&nbsp;&nbsp;
+  <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 10px;right:10px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:250px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo Free&nbsp;&nbsp;
     <img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16">
   </pingendo>
 </body>
