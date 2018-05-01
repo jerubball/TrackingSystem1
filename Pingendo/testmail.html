@@ -5,16 +5,16 @@
 <h1> test <h1>
 
 <?php
-$result = mail ("him.nyit@gmail.com", "Test Mail from PHP", "test email",
-        "From: him.nyit@gmail.com\r\n".
-        "Reply-To: him.nyit@gmail.com\r\n".
-        "X-Mailer: PHP/" . phpversion());
-if ($result) {
-    echo "True";
-}
-else {
-    echo "False";
-}
+$to      = 'him.nyit@gmail.com';
+$subject = 'Test subject';
+$message = 'Test body';
+$headers = array(
+    'From' => 'him.nyit@gmail.com',
+    'Reply-To' => 'him.nyit@gmail.com',
+    'X-Mailer' => 'PHP/' . phpversion()
+);
+
+mail($to, $subject, $message, $headers);
 ?>
 </body>
 
