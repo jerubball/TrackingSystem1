@@ -23,7 +23,7 @@ if (isset($_SESSION['id'])) {
         $last = $row['Last_Name'];
         $email = $row['Email'];
         $gender = $row['Gender'];
-        $type = $row['Account_Type']
+        $type = $row['Account_Type'];
         echo $first . ";" . $last . ";" . $email . ";" . $gender . ";" . $type;
     } else {
         echo "No result for account.";
