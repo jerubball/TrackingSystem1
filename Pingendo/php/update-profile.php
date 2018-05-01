@@ -20,9 +20,19 @@ if (isset($_SESSION['id'])) {
       die ("Connection failed: " . $conn -> connect_error);
     }
     
-    $sql = "UPDATE Child_Tracker.account_info SET First_Name='$first', Last_Name='$last', Email='$email', Gender='$gender' WHERE Google_UID = ".$id;
+    $sql = "UPDATE Child_Tracker.account_info SET First_Name='$first', Last_Name='$last' WHERE Google_UID = ".$id;
     $ans = $conn -> query($sql);
-    echo "Done".$first;
+    
+    if ($gender !== "") {
+        $sql = "UPDATE Child_Tracker.account_info SET Gender='$gender' WHERE Google_UID = ".$id;
+        $ans = $conn -> query($sql);
+    }
+    
+    //$sql = "UPDATE Child_Tracker.account_info SET Email='$email' WHERE Google_UID = ".$id;
+    //$ans = $conn -> query($sql);
+    
+    echo "$id";
+    
     $conn -> close();
 }
 
