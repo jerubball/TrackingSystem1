@@ -19,15 +19,23 @@ if (isset($_SESSION['id'])) {
     $ans = $conn -> query($sql);
     if ($ans->num_rows > 0) {
         $row = $ans->fetch_assoc();
-        $first = $row['First_Name'];
-        $last = $row['Last_Name'];
-        $email = $row['Email'];
-        $gender = $row['Gender'];
-        $type = $row['Account_Type'];
         $group = $row['Group_ID'];
-        echo $first . ";" . $last . ";" . $email . ";" . $gender . ";" . $type . ";" . $group;
+        
+        $sql = "SELECT * FROM Child_Tracker.family_group WHERE Group_ID = " . $group;
+        $ans = $conn -> query($sql);
+        if ($ans->num_rows > 0) {
+            $row = $ans->fetch_assoc();
+            $street = $row['Street_Address'];
+            $city = $row['City_Address'];
+            $state = $row['State_Address'];
+            $zip = $row['Zip_Address'];
+            echo $street . ";" . $city . ";" . $state . ";" . $zip;
+        }
+        else {
+            echo "No result for group.";
+        }
     } else {
-        echo "No result for account.";
+        echo "No group for account.";
     }
     $conn -> close();
 }
