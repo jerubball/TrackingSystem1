@@ -32,6 +32,8 @@ if (isset($_SESSION['id'])) {
             
             $sql = "UPDATE Child_Tracker.account_info SET Group_ID=LAST_INSERT_ID() WHERE Google_UID = ".$id;
             $ans = $conn -> query($sql);
+            
+            echo "Created Group.";
         }
         else {
             $sql = "UPDATE Child_Tracker.family_group SET Street_Address='$street', City_Address='$city', State_Address='$state', Zip_Address=$zip WHERE Group_ID = ".$group;
