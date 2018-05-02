@@ -64,6 +64,8 @@ function getAccountType () {
             var args = this.responseText.split (";");
             var type = args[4];
             if (type == "Child") {
+            }
+            else {
                 hideById('selection');
             }
         }
