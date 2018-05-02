@@ -31,7 +31,7 @@ if (isset($_SESSION['id'])) {
             $ans = $conn -> query($sql);
             if ($ans->num_rows > 0) {
                 $row = $ans->fetch_assoc();
-                $group = $row['Auto_Increment'];
+                $group = $row['Auto_increment'];
                 
                 $sql = "INSERT INTO Child_Tracker.family_group VALUES ($group, '$street', '$city', '$state', '$zip')";
                 $ans = $conn -> query($sql);
