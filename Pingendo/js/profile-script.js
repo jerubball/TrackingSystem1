@@ -13,6 +13,15 @@ function getProfile () {
             document.getElementById('accountEmail').value = args[2];
             document.getElementById('accountGender').value = args[3];
             var type = args[4];
+            if (type == "Child") {
+                hideById('groupRemove');
+                hideById('groupAdd');
+                document.getElementById('addressStreet').disabled = true;
+                document.getElementById('addressCity').disabled = true;
+                document.getElementById('addressState').disabled = true;
+                document.getElementById('addressZip').disabled = true;
+                document.getElementById('groupUpdateBtn').disabled = true;
+            }
             var group = args[5];
             if (group == "") {
                 document.getElementById('groupBlockBtn').innerHTML = "Create Group";
