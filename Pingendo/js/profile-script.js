@@ -88,6 +88,6 @@ function addChild () {
             }
         }
     };
-    xmlhttp.open ("GET", "/php/group-add.php?email=" email, true);
+    xmlhttp.open ("GET", "/php/group-add.php?email=" + email, true);
     xmlhttp.send ();
 }
