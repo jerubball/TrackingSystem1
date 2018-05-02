@@ -92,7 +92,7 @@ function addChild () {
     xmlhttp.send ();
 }
 
-function removeChild () {
+function deletChild () {
     alert (document.getElementById('selectChild').innerHTML);
     alert (document.getElementById('selectChild').value);
     var name = document.getElementById('selectChild').value;
