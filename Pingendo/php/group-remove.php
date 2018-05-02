@@ -38,7 +38,7 @@ if (isset($_SESSION['id'])) {
                 echo "Child Removed.";
             }
             else {
-                echo "Person cannot be removed."
+                echo "Person cannot be removed.";
             }
         }
         else {
