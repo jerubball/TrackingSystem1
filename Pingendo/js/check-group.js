@@ -43,7 +43,7 @@ function checkGroup () {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             if (this.responseText) {
-                alert (this.responseText);
+                //alert (this.responseText);
             }
             else {
                 alert ("You do not belong to any group.\nPlease create group.");
@@ -51,6 +51,6 @@ function checkGroup () {
             }
         }
     };
-    xmlhttp.open ("GET", "/php/group-check", true);
+    xmlhttp.open ("GET", "/php/group-check.php", true);
     xmlhttp.send ();
 }
