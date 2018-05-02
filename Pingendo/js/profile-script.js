@@ -14,7 +14,6 @@ function getProfile () {
             document.getElementById('accountGender').value = args[3];
             var type = args[4];
             var group = args[5];
-            alert (group);
             if (group == "") {
                 document.getElementById('groupBlockBtn').innerHTML = "Create Group";
             }
@@ -23,7 +22,7 @@ function getProfile () {
             }
         }
     };
-    xmlhttp.open ("GET", "/php/get-profile.php", true);
+    xmlhttp.open ("GET", "/php/profile-get.php", true);
     xmlhttp.send ();
 }
 
@@ -39,7 +38,7 @@ function getGroup () {
             document.getElementById('addressZip').value = args[3];
         }
     };
-    xmlhttp.open ("GET", "/php/get-group.php", true);
+    xmlhttp.open ("GET", "/php/group-get.php", true);
     xmlhttp.send ();
 }
 
@@ -51,24 +50,25 @@ function updateProfile() {
     var xmlhttp = new XMLHttpRequest ();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            alert (this.responseText);
+            //alert (this.responseText);
         }
     };
-    xmlhttp.open ("GET", "/php/update-profile.php?fname=" + fname + "&lname=" + lname + "&email=" + email + "&gender=" + gender, true);
+    xmlhttp.open ("GET", "/php/profile-update.php?fname=" + fname + "&lname=" + lname + "&email=" + email + "&gender=" + gender, true);
     xmlhttp.send ();
 }
 
 function updateGroup () {
-    var fname = document.getElementById('accountFirst').value;
-    var lname = document.getElementById('accountLast').value;
-    var email = document.getElementById('accountEmail').value;
-    var gender = document.getElementById('accountGender').value;
+    var street = document.getElementById('addressStreet').value;
+    var city = document.getElementById('addressCity').value;
+    var state = document.getElementById('addressState').value;
+    var zip = document.getElementById('addressZip').value;
+    
     var xmlhttp = new XMLHttpRequest ();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            alert (this.responseText);
+            //alert (this.responseText);
         }
     };
-    xmlhttp.open ("GET", "/php/update-profile.php?fname=" + fname + "&lname=" + lname + "&email=" + email + "&gender=" + gender, true);
+    xmlhttp.open ("GET", "/php/group-update.php?street=" + street + "&city=" + city + "&state=" + state + "&zip=" + zip, true);
     xmlhttp.send ();
 }

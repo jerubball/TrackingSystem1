@@ -21,21 +21,14 @@ if (isset($_SESSION['id'])) {
         $row = $ans->fetch_assoc();
         $group = $row['Group_ID'];
         
-        $sql = "SELECT * FROM Child_Tracker.family_group WHERE Group_ID = " . $group;
-        $ans = $conn -> query($sql);
-        if ($ans->num_rows > 0) {
-            $row = $ans->fetch_assoc();
-            $street = $row['Street_Address'];
-            $city = $row['City_Address'];
-            $state = $row['State_Address'];
-            $zip = $row['Zip_Address'];
-            echo $street . ";" . $city . ";" . $state . ";" . $zip;
+        if ($group == "") {
+            echo false;
         }
         else {
-            echo "No result for group.";
+            echo true;
         }
     } else {
-        echo "No group for account.";
+        echo "No result for account.";
     }
     $conn -> close();
 }
