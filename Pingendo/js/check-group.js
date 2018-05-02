@@ -44,6 +44,7 @@ function checkGroup () {
         if (this.readyState == 4 && this.status == 200) {
             if (this.responseText) {
                 //alert (this.responseText);
+                getAccountType();
             }
             else {
                 alert ("You do not belong to any group.\nPlease create group.");
@@ -52,5 +53,21 @@ function checkGroup () {
         }
     };
     xmlhttp.open ("GET", "/php/group-check.php", true);
+    xmlhttp.send ();
+}
+
+function getAccountType () {
+    var xmlhttp = new XMLHttpRequest ();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            //alert (this.responseText);
+            var args = this.responseText.split (";");
+            var type = args[4];
+            if (type == "Child") {
+                hideById('selection');
+            }
+        }
+    };
+    xmlhttp.open ("GET", "/php/profile-get.php", true);
     xmlhttp.send ();
 }
