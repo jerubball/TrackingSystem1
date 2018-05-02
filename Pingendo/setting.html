@@ -93,11 +93,25 @@
       </div>
     </div>
   </div>
-  <div class="pt-4 pb-2">
+  <div class="pt-4 pb-2" id="groupAdd">
     <div class="container">
       <div class="row">
         <div class="col-md-5" style="transition: all 0.25s;">
-          <a href="#" class="btn btn-outline-primary">Link New Child to Account</a>
+          <a href="#groupAdd" class="btn btn-outline-primary" onclick="hideById('child')">Link New Child to Account</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-2" id="child" style="display:none">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 border p-2 text-primary">
+          <form>
+            <div class="form-group">
+              <label>Child Email Address</label>
+              <input id="childEmail" type="email" class="form-control" placeholder="Enter email" value="" disabled="" name="email"> </div>
+          </form>
+          <button class="btn btn-primary">Submit</button>
         </div>
       </div>
     </div>
