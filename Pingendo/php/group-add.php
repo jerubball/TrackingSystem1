@@ -26,7 +26,7 @@ if (isset($_SESSION['id'])) {
         $sql = "UPDATE Child_Tracker.account_info SET Group_ID = '$groupID', Account_Type = 'Child' WHERE Email = '$email";
         $ans = $conn -> query($sql);
         
-        echo "Child Added."
+        echo "Child Added.";
     }
     else {
         echo "No result for account.";
