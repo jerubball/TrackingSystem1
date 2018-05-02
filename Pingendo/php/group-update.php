@@ -35,8 +35,8 @@ if (isset($_SESSION['id'])) {
             if ($ans->num_rows > 0) {
                 $row = $ans->fetch_assoc();
                 $group = $row['Group_ID'];
-                
-                $sql = "UPDATE Child_Tracker.account_info SET Group_ID='$group' WHERE Google_UID = ".$id;
+                echo "$group";
+                $sql = "UPDATE Child_Tracker.account_info SET Group_ID=$group WHERE Google_UID = ".$id;
                 $ans = $conn -> query($sql);
             }
             else {
