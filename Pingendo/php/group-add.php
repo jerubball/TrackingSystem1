@@ -9,7 +9,7 @@ $db_pass = "13579";
 if (isset($_SESSION['id'])) {
     $id = $_SESSION['id'];
     
-    $email = $_GET("email");
+    $email = $_GET['email'];
     
     $conn = new mysqli ($db_server, $db_user, $db_pass);
     
