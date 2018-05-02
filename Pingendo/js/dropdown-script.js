@@ -28,10 +28,14 @@ function updateDropdown (id) {
             //alert (this.responseText);
             var names = this.responseText.split (";");
             var htmltext = "";
-            for (var i = 0; i < names.length - 1; i++) {
-                htmltext += "<button class=\"dropdown-item\" type=\"button\" onclick=\"selectDropdown('selectChildBtn', '" + names[i] + "')\">" + names[i] + "</button>\n";
+            if (names.length > 0) {
+                for (var i = 0; i < names.length - 1; i++) {
+                    htmltext += "<button class=\"dropdown-item\" type=\"button\" onclick=\"selectDropdown('selectChildBtn', '" + names[i] + "')\">" + names[i] + "</button>\n";
+                }
             }
-            
+            else {
+                htmltext = "<button class=\"dropdown-item\" type=\"button\">No Child Listed</button>";
+            }
             document.getElementById(id).innerHTML = htmltext;
         }
     };
