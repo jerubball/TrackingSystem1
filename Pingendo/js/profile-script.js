@@ -14,7 +14,7 @@ function getProfile () {
             document.getElementById('accountGender').value = args[3];
             var group = args[4];
             if (group == "") {
-                document.getElementByID('groupBlockBtn').innerHTML = "Create Group";
+                document.getElementById('groupBlockBtn').innerHTML = "Create Group";
             }
             else {
                 //getGroup ();
