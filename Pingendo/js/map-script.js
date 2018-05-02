@@ -15,6 +15,9 @@ function showMap1 (position) {
       //alert (this.responseText);
       var coords = this.responseText.split(";");
       var centers = [];
+      
+      alert (coords[coords.length - 2]);
+      alert (coords[coords.length - 1]);
       for (var i = 0; i < coords.length; i++) {
           var coord = coords[i].split(",");
           //alert (parseFloat(coord[0]) + ", " + parseFloat(coord[1]));
