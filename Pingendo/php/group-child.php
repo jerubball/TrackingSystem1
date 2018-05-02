@@ -26,7 +26,7 @@ if (isset($_SESSION['id'])) {
         
         if ($ans->num_rows > 0) {
             while($row = $ans->fetch_assoc()) {
-                echo $row['First_Name'] . ";\n";
+                echo $row['First_Name'] . ";";
             }
         }
     }
