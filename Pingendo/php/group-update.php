@@ -36,7 +36,7 @@ if (isset($_SESSION['id'])) {
                 $sql = "INSERT INTO Child_Tracker.family_group VALUES ($group, '$street', '$city', '$state', '$zip')";
                 $ans = $conn -> query($sql);
                 
-                $sql = "UPDATE Child_Tracker.account_info SET Group_ID=$group WHERE Google_UID = ".$id;
+                $sql = "UPDATE Child_Tracker.account_info SET Group_ID=$group, Account_Type='Parent' WHERE Google_UID = ".$id;
                 $ans = $conn -> query($sql);
                 
                 echo "Created Group.";
