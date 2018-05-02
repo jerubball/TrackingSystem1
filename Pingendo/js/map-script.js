@@ -40,7 +40,7 @@ function updateMap1 () {
           marker.setMap(map);
           var cord = coords[coords.length - 2].split(",");
           var infowindow = new google.maps.InfoWindow({
-            content: name + "'s Location at " + cord[2] + ".<br>Latitude: " + cord[0] + "<br>Longitude: " + cord[1]
+            content: name + "'s Location.<br>Latitude: " + cord[0] + "<br>Longitude: " + cord[1] + "<br>@ " + cord[2]
           });
           infowindow.open(map,marker);
         }
