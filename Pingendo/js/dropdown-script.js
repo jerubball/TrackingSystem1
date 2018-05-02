@@ -25,12 +25,11 @@ function updateDropdown (id) {
             alert (document.getElementById(id).innerHTML);
             var names = this.responseText.split (";");
             var htmltext = "";
-            for (var i = 0; i < names.length; i++) {
-                alert (names[i]);
-                //var item = document.createElement("button");
+            for (var i = 0; i < names.length - 1; i++) {
+                htmltext += "<button class=\"dropdown-item\" type=\"button\">" + names[i] + "</button>\n";
             }
             
-            //document.getElementById(id).innerHTML = htmltext;
+            document.getElementById(id).innerHTML = htmltext;
         }
     };
     xmlhttp.open ("GET", "/php/group-child.php", true);
