@@ -29,7 +29,7 @@ function updateDropdown (id) {
             var names = this.responseText.split (";");
             var htmltext = "";
             for (var i = 0; i < names.length - 1; i++) {
-                htmltext += "<button class=\"dropdown-item\" type=\"button\" onclick=\"selectDropdown('selectChildBtn', " + names[i] + ")\">" + names[i] + "</button>\n";
+                htmltext += "<button class=\"dropdown-item\" type=\"button\" onclick=\"selectDropdown('selectChildBtn', '" + names[i] + "')\">" + names[i] + "</button>\n";
             }
             
             document.getElementById(id).innerHTML = htmltext;
