@@ -23,7 +23,7 @@ if (isset($_SESSION['id'])) {
         $row = $ans->fetch_assoc();
         $group = $row['Group_ID'];
         
-        $sql = "UPDATE Child_Tracker.account_info SET Group_ID = '$group', Account_Type = 'Child' WHERE Email = '$email";
+        $sql = "UPDATE Child_Tracker.account_info SET Group_ID = '$group', Account_Type = 'Child' WHERE Email = '$email'";
         $ans = $conn -> query($sql);
         
         echo "Child Added.";
