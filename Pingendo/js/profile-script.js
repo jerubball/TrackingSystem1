@@ -93,11 +93,8 @@ function addChild () {
 }
 
 function deleteChild () {
-    alert (document.getElementById('selectChild').innerHTML);
-    alert (document.getElementById('selectChild').value);
-    var name = document.getElementById('selectChild').value;
+    var name = document.getElementById('selectChild').innerHTML;
     
-    /*
     var xmlhttp = new XMLHttpRequest ();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -109,5 +106,4 @@ function deleteChild () {
     };
     xmlhttp.open ("GET", "/php/group-remove.php?name=" + name, true);
     xmlhttp.send ();
-    */
 }
