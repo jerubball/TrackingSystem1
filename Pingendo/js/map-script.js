@@ -10,8 +10,12 @@ function map1() {
 
 function updateMap1 () {
     var name = document.getElementById('selectChildBtn').innerHTML;
-    var xmlhttp = new XMLHttpRequest ();
-    xmlhttp.onreadystatechange = function () {
+    if (name == "Select Child") {
+        alert ("Please select a child");
+    }
+    else {
+        var xmlhttp = new XMLHttpRequest ();
+        xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
           //alert (this.responseText);
           var coords = this.responseText.split(";");
@@ -43,6 +47,7 @@ function updateMap1 () {
       };
       xmlhttp.open ("GET", "/php/map-retrieve.php?name=" + name, true);
       xmlhttp.send ();
+    }
 }
 
 function showMap1 (position) {
