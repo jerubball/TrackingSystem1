@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-    checkLogin ();
+    updateDropdown ('selectChild');
 });
 
 $(".dropdown-menu li a").click(function(){
