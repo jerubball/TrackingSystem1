@@ -17,25 +17,33 @@ if (isset($_SESSION['id'])) {
       die ("Connection failed: " . $conn -> connect_error);
     }
     
-    $sql = "SELECT Group_ID FROM Child_Tracker.account_info WHERE Google_UID = " . $id;
-    $ans = $conn -> query($sql);
-    if ($ans->num_rows > 0) {
-        $row = $ans->fetch_assoc();
-        $group = $row['Group_ID'];
-        
-        $sql = "SELECT * FROM Child_Tracker.account_info WHERE Group_ID = '$group' AND First_Name = '$name' AND Account_Type = 'Child'";
+    if ($name == "Select Child") {
+        echo "Please select a child";
+    }
+    else {
+        $sql = "SELECT Group_ID FROM Child_Tracker.account_info WHERE Google_UID = " . $id;
         $ans = $conn -> query($sql);
         if ($ans->num_rows > 0) {
             $row = $ans->fetch_assoc();
-        
-            $sql = "UPDATE Child_Tracker.account_info SET Group_ID = NULL, Account_Type = NULL WHERE Group_ID = '$group' AND First_Name = '$name' AND Account_Type = 'Child'";
-            $ans = $conn -> query($sql);
+            $group = $row['Group_ID'];
             
-            echo "Child Removed.";
+            $sql = "SELECT * FROM Child_Tracker.account_info WHERE Group_ID = '$group' AND First_Name = '$name' AND Account_Type = 'Child'";
+            $ans = $conn -> query($sql);
+            if ($ans->num_rows > 0) {
+                $row = $ans->fetch_assoc();
+            
+                $sql = "UPDATE Child_Tracker.account_info SET Group_ID = NULL, Account_Type = NULL WHERE Group_ID = '$group' AND First_Name = '$name' AND Account_Type = 'Child'";
+                $ans = $conn -> query($sql);
+                
+                echo "Child Removed.";
+            }
+            else {
+                echo "Person cannot be removed."
+            }
         }
-    }
-    else {
-        echo "No result for account.";
+        else {
+            echo "No result for account.";
+        }
     }
     $conn -> close();
 }
