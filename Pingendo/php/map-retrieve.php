@@ -33,7 +33,7 @@ if (isset($_SESSION['id'])) {
             $ans = $conn -> query($sql);
             if ($ans->num_rows > 0) {
                 while($row = $ans->fetch_assoc()) {
-                    echo $row['Latitude'] . "," . $row['Longitude']. ";";
+                    echo $row['Latitude'] . "," . $row['Longitude'] . "," . $row['Time'] . ";";
                 }
             }
             else {
@@ -63,7 +63,7 @@ if (isset($_SESSION['id'])) {
                 $ans = $conn -> query($sql);
                 if ($ans->num_rows > 0) {
                     while($row = $ans->fetch_assoc()) {
-                        echo $row['Latitude'] . "," . $row['Longitude']. ";";
+                        echo $row['Latitude'] . "," . $row['Longitude'] . "," . $row['Time'] . ";";
                     }
                 }
                 else {

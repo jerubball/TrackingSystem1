@@ -22,7 +22,7 @@ function updateMap1 () {
           var centers = [];
           for (var i = 0; i < coords.length - 1; i++) {
               var coord = coords[i].split(",");
-              //alert (parseFloat(coord[0]) + ", " + parseFloat(coord[1]));
+              //alert (parseFloat(coord[0]) + ", " + parseFloat(coord[1]) + " @ " + coord[2]);
               centers.push (new google.maps.LatLng(parseFloat(coord[0]), parseFloat(coord[1])));
           }
           var myCenter = centers[centers.length - 1];
@@ -40,7 +40,7 @@ function updateMap1 () {
           marker.setMap(map);
           var cord = coords[coords.length - 2].split(",");
           var infowindow = new google.maps.InfoWindow({
-            content: name + "'s Location.<br>Latitude: " + cord[0] + "<br>Longitude: " + cord[1]
+            content: name + "'s Location at " + cord[2] + ".<br>Latitude: " + cord[0] + "<br>Longitude: " + cord[1]
           });
           infowindow.open(map,marker);
         }
@@ -60,10 +60,11 @@ function showMap1 (position) {
       var centers = [];
       for (var i = 0; i < coords.length - 1; i++) {
           var coord = coords[i].split(",");
-          //alert (parseFloat(coord[0]) + ", " + parseFloat(coord[1]));
+          //alert (parseFloat(coord[0]) + ", " + parseFloat(coord[1]) + " @ " + coord[2]);
           centers.push (new google.maps.LatLng(parseFloat(coord[0]), parseFloat(coord[1])));
       }
       var myCenter = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      centers.push (myCenter);
       var mapCanvas = document.getElementById("map1");
       var mapOptions = {center: myCenter, zoom: 12};
       var map = new google.maps.Map(mapCanvas, mapOptions);
