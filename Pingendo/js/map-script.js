@@ -42,7 +42,7 @@ function showMap1 (position) {
       var marker = new google.maps.Marker({position:myCenter});
       marker.setMap(map);
       var infowindow = new google.maps.InfoWindow({
-        content: "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude
+        content: "Your Location.<br>Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude
       });
       infowindow.open(map,marker);
     }
