@@ -58,6 +58,24 @@ function updateProfile() {
     xmlhttp.send ();
 }
 
+/*
+function updateGroup() {
+	var streetAdd = document.getElementById('street').value;
+	var cityAdd = document.getElementById('city').value;
+	var stateAdd = document.getElementById('state').value;
+	var zipAdd = document.getElementById('zip').value;
+	alert (this.responseText);
+	var xmlhttp = new XMLHttpRequest ();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            alert (this.responseText);
+        }
+    };
+    xmlhttp.open ("GET", "/php/update-Group.php?streetAdd=" + streetAdd + "&cityAdd=" + cityAdd 
+	+ "&stateAdd=" + stateAdd + "&zipAdd=" + zipAdd, true);
+    xmlhttp.send ();
+}
+*/
 function updateGroup () {
     var fname = document.getElementById('accountFirst').value;
     var lname = document.getElementById('accountLast').value;
