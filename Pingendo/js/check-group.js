@@ -42,7 +42,13 @@ function checkGroup () {
     var xmlhttp = new XMLHttpRequest ();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            //alert (this.responseText);
+            if (this.responseText) {
+                //alert (this.responseText);
+            }
+            else {
+                alert ("You do not belong to any group.\nPlease create group.");
+                redirectURL("setting.html");
+            }
         }
     };
     xmlhttp.open ("GET", "/php/group-check", true);
