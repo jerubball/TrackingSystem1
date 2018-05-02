@@ -12,7 +12,9 @@ function getProfile () {
             document.getElementById('accountLast').value = args[1];
             document.getElementById('accountEmail').value = args[2];
             document.getElementById('accountGender').value = args[3];
-            var group = args[4];
+            var type = args[4];
+            var group = args[5];
+            alert (group);
             if (group == "") {
                 document.getElementById('groupBlockBtn').innerHTML = "Create Group";
             }
