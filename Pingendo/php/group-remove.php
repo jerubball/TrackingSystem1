@@ -23,10 +23,16 @@ if (isset($_SESSION['id'])) {
         $row = $ans->fetch_assoc();
         $group = $row['Group_ID'];
         
-        $sql = "UPDATE Child_Tracker.account_info SET Group_ID = NULL, Account_Type = NULL WHERE Group_ID = '$group' AND First_Name = '$name' AND Account_Type = 'Child'";
+        $sql = "SELECT * FROM Child_Tracker.account_info WHERE Group_ID = '$group' AND First_Name = '$name' AND Account_Type = 'Child'";
         $ans = $conn -> query($sql);
+        if ($ans->num_rows > 0) {
+            $row = $ans->fetch_assoc();
         
-        echo "Child Removed.";
+            $sql = "UPDATE Child_Tracker.account_info SET Group_ID = NULL, Account_Type = NULL WHERE Group_ID = '$group' AND First_Name = '$name' AND Account_Type = 'Child'";
+            $ans = $conn -> query($sql);
+            
+            echo "Child Removed.";
+        }
     }
     else {
         echo "No result for account.";
