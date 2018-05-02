@@ -91,3 +91,23 @@ function addChild () {
     xmlhttp.open ("GET", "/php/group-add.php?email=" + email, true);
     xmlhttp.send ();
 }
+
+function removeChild () {
+    alert (document.getElementById('selectChild').innerHTML);
+    alert (document.getElementById('selectChild').value);
+    var name = document.getElementById('selectChild').value;
+    
+    /*
+    var xmlhttp = new XMLHttpRequest ();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            if (this.responseText != "") {
+                alert (this.responseText);
+                location.reload();
+            }
+        }
+    };
+    xmlhttp.open ("GET", "/php/group-remove.php?name=" + name, true);
+    xmlhttp.send ();
+    */
+}
