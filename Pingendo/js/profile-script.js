@@ -93,7 +93,7 @@ function addChild () {
 }
 
 function deleteChild () {
-    var name = document.getElementById('selectChild').innerHTML;
+    var name = document.getElementById('selectChildBtn').innerHTML;
     
     var xmlhttp = new XMLHttpRequest ();
     xmlhttp.onreadystatechange = function () {
