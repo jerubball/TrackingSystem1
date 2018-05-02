@@ -7,6 +7,14 @@ function map1() {
   }
 }
 
+function map2 () {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showMap1);
+  } else {
+    alert("Geolocation is not supported by this browser.");
+  }
+}
+
 function showMap1 (position) {
   updateDB (position);
   var xmlhttp = new XMLHttpRequest ();
