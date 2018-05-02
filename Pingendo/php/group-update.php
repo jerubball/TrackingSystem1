@@ -42,14 +42,15 @@ if (isset($_SESSION['id'])) {
                 echo "Created Group.";
             }
             else {
-                echo "Error."
+                echo "Error.";
             }
         }
         else {
             $sql = "UPDATE Child_Tracker.family_group SET Street_Address='$street', City_Address='$city', State_Address='$state', Zip_Address=$zip WHERE Group_ID = ".$group;
             $ans = $conn -> query($sql);
         }
-    } else {
+    }
+    else {
         echo "No result for account.";
     }
     $conn -> close();
