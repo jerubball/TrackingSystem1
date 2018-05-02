@@ -29,9 +29,10 @@ if (isset($_SESSION['id'])) {
     $ans = $conn -> query($sql);
     if ($ans->num_rows > 0) {
         while($row = $ans->fetch_assoc()) {
-            echo $row['Latitude'] . "," . $row['Longitude']. ";\n";
+            echo $row['Latitude'] . "," . $row['Longitude']. ";";
         }
-    } else {
+    }
+    else {
         echo "No result for Location.";
     }
     $conn -> close();
