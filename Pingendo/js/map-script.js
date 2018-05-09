@@ -26,6 +26,10 @@ function map1() {
 function map1a() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showMap1);
+        alert ("Some");
+    }
+    else {
+        alert("Geolocation is not supported by this browser.");
     }
 }
 
