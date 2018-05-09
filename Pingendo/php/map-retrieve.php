@@ -25,6 +25,8 @@ if (isset($_SESSION['id'])) {
         $lim = " AND (Time BETWEEN FROM_UNIXTIME($past) AND FROM_UNIXTIME($now))";
     }
     
+    echo $lim . "\n";
+    
     if ($name == "") {
         $sql = "SELECT * FROM Child_Tracker.account_info WHERE Google_UID = " . $id;
         $ans = $conn -> query($sql);
