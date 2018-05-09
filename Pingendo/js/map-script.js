@@ -1,8 +1,22 @@
 
 function map1() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showMap1);
-        navigator.geolocation.watchPosition(showMap1);
+        var xmlhttp = new XMLHttpRequest ();
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                //alert (this.responseText);
+                var args = this.responseText.split (";");
+                var type = args[4];
+                if (type == "Child") {
+                    navigator.geolocation.watchPosition(showMap1);
+                }
+                else {
+                    navigator.geolocation.getCurrentPosition(showMap1);
+                }
+            }
+        };
+        xmlhttp.open ("GET", "/php/profile-get.php", true);
+        xmlhttp.send ();
     }
     else {
         alert("Geolocation is not supported by this browser.");
