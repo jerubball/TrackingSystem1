@@ -10,7 +10,7 @@ if (isset($_SESSION['id'])) {
     $id = $_SESSION['id'];
     
     $name = $_GET['name'];
-    $dur = intval($_GET['duration']);
+    $dur = intval($_GET['dur']);
     $lim = "";
     
     $conn = new mysqli ($db_server, $db_user, $db_pass);
@@ -24,8 +24,6 @@ if (isset($_SESSION['id'])) {
         $past = $now - $dur;
         $lim = " AND (Time BETWEEN FROM_UNIXTIME($past) AND FROM_UNIXTIME($now))";
     }
-    
-    echo $lim . "\n";
     
     if ($name == "") {
         $sql = "SELECT * FROM Child_Tracker.account_info WHERE Google_UID = " . $id;
