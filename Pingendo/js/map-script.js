@@ -26,7 +26,6 @@ function map1() {
 function map1a() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showMap1);
-        alert ("Some");
     }
     else {
         alert("Geolocation is not supported by this browser.");
@@ -79,7 +78,7 @@ function updateMap1 () {
 
 function showMap1 (position) {
   updateDB (position);
-  var duration = getDuration ();
+  //var duration = getDuration ();
   var xmlhttp = new XMLHttpRequest ();
   xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
@@ -111,7 +110,7 @@ function showMap1 (position) {
       infowindow.open(map,marker);
     }
   };
-  xmlhttp.open ("GET", "/php/map-retrieve.php?name=&dur=" + duration, true);
+  xmlhttp.open ("GET", "/php/map-retrieve.php?name=", true);
   xmlhttp.send ();
   
 }

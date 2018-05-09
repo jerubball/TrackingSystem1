@@ -64,8 +64,8 @@ function getAccountType () {
             var args = this.responseText.split (";");
             var type = args[4];
             if (type == "Child") {
-                hideById('control');
-                document.getElementById('refreshMapBtn').innerHTML = "Last 12 Hours";
+                //hideById('control');
+                //document.getElementById('refreshMapBtn').innerHTML = "Last 12 Hours";
             }
             else {
                 hideById('selection');

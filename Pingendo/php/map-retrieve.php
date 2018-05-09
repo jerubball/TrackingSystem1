@@ -10,7 +10,7 @@ if (isset($_SESSION['id'])) {
     $id = $_SESSION['id'];
     
     $name = $_GET['name'];
-    $dur = intval($_GET['dur']);
+    $dur = $_GET['dur'];
     $lim = "";
     
     $conn = new mysqli ($db_server, $db_user, $db_pass);
@@ -19,10 +19,13 @@ if (isset($_SESSION['id'])) {
       die ("Connection failed: " . $conn -> connect_error);
     }
     
-    if ($dur > 0) {
-        $now = time();
-        $past = $now - $dur;
-        $lim = " AND (Time BETWEEN FROM_UNIXTIME($past) AND FROM_UNIXTIME($now))";
+    if ($dur != "") {
+        $dur = intval($dur);
+        if ($dur > 0) {
+            $now = time();
+            $past = $now - $dur;
+            $lim = " AND (Time BETWEEN FROM_UNIXTIME($past) AND FROM_UNIXTIME($now))";
+        }
     }
     
     if ($name == "") {
