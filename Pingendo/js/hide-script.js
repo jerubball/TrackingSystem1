@@ -15,7 +15,7 @@ function toggleTextById (id1, id2) {
         x.innerHTML = "Expand";
     }
     else {
-        x.innerHTML = "Hide";
+        x.innerHTML = "Collapse";
     }
 }
 

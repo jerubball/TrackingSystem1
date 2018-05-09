@@ -5,8 +5,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="css/colorful.css"> 
-  <title>Tracking System</title> </head>
+  <link rel="stylesheet" href="css/colorful.css">
+  <title>Tracking System</title>
+</head>
 
 <body>
   <nav class="navbar navbar-expand-md bg-primary navbar-dark">
@@ -38,7 +39,7 @@
       </div>
     </div>
   </nav>
-  <div class="py-3" id="selection" style="display:none">
+  <div class="py-3" id="selection" style="display:block">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
@@ -54,7 +55,41 @@
               <div class="dropdown-divider"></div>
               <button class="dropdown-item" type="button">Option 1</button>
             </div>
+            <button class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" id="selectTimeBtn">Last 12 Hours</button>
+            <div id="selectTime" class="dropdown-menu">
+              <button class="dropdown-item" type="button">Last 12 Hours</button>
+              <button class="dropdown-item" type="button">Last 24 Hours</button>
+              <button class="dropdown-item" type="button">Last 48 Hours</button>
+              <button class="dropdown-item" type="button">Last 1 Week</button>
+              <button class="dropdown-item" type="button">Last 2 Weeks</button>
+              <button class="dropdown-item" type="button">Last 1 Month</button>
+              <button class="dropdown-item" type="button">Show All</button>
+            </div>
             <button class="btn btn-outline-primary" onclick="updateMap1()">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-3" id="control" style="display:block">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p class="lead">Choose display option</p>
+        </div>
+        <div class="col-md-6">
+          <div class="btn-group">
+            <button id="refreshMapBtn" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">Last 12 Hours</button>
+            <div id="refreshMap" class="dropdown-menu">
+              <button class="dropdown-item" type="button">Last 12 Hours</button>
+              <button class="dropdown-item" type="button">Last 24 Hours</button>
+              <button class="dropdown-item" type="button">Last 48 Hours</button>
+              <button class="dropdown-item" type="button">Last 1 Week</button>
+              <button class="dropdown-item" type="button">Last 2 Weeks</button>
+              <button class="dropdown-item" type="button">Last 1 Month</button>
+              <button class="dropdown-item" type="button">Show All</button>
+            </div>
+            <button class="btn btn-outline-primary" onclick="showMap1()">Update</button>
           </div>
         </div>
       </div>
