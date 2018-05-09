@@ -110,7 +110,7 @@ function showMap1 (position) {
       infowindow.open(map,marker);
     }
   };
-  xmlhttp.open ("GET", "/php/map-retrieve.php?name=", true);
+  xmlhttp.open ("GET", "/php/map-retrieve.php?name=&dur=", true);
   xmlhttp.send ();
   
 }
