@@ -61,12 +61,13 @@
               <button class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" id="selectTimeBtn">Last 12 Hours</button>
               <div id="selectTime" class="dropdown-menu">
                 <button class="dropdown-item" type="button" onclick="selectDropdown('selectTimeBtn', this.innerHTML)">Last 12 Hours</button>
-                <button class="dropdown-item" type="button" onclick="selectDropdown('selectTimeBtn', 'Last 24 Hours')">Last 24 Hours</button>
-                <button class="dropdown-item" type="button" onclick="selectDropdown('selectTimeBtn', 'Last 24 Hours')">Last 48 Hours</button>
-                <button class="dropdown-item" type="button" onclick="selectDropdown('selectTimeBtn', 'Last 12 Hours')">Last 1 Week</button>
-                <button class="dropdown-item" type="button" onclick="selectDropdown('selectTimeBtn', 'Last 12 Hours')">Last 2 Weeks</button>
-                <button class="dropdown-item" type="button" onclick="selectDropdown('selectTimeBtn', 'Last 12 Hours')">Last 1 Month</button>
-                <button class="dropdown-item" type="button" onclick="selectDropdown('selectTimeBtn', 'Last 12 Hours')">Show All</button>
+                <button class="dropdown-item" type="button" onclick="selectDropdown('selectTimeBtn', this.innerHTML)">Last 24 Hours</button>
+                <button class="dropdown-item" type="button" onclick="selectDropdown('selectTimeBtn', this.innerHTML)">Last 48 Hours</button>
+                <button class="dropdown-item" type="button" onclick="selectDropdown('selectTimeBtn', this.innerHTML)">Last 1 Week</button>
+                <button class="dropdown-item" type="button" onclick="selectDropdown('selectTimeBtn', this.innerHTML)">Last 2 Weeks</button>
+                <button class="dropdown-item" type="button" onclick="selectDropdown('selectTimeBtn', this.innerHTML)">Last 1 Month</button>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item" type="button" onclick="selectDropdown('selectTimeBtn', this.innerHTML)">Show All</button>
               </div>
             </div>
             <button class="btn btn-outline-primary" onclick="updateMap1()">Update</button>
@@ -83,15 +84,18 @@
         </div>
         <div class="col-md-6">
           <div class="btn-group">
-            <button id="refreshMapBtn" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">Last 12 Hours</button>
-            <div id="refreshMap" class="dropdown-menu">
-              <button class="dropdown-item" type="button">Last 12 Hours</button>
-              <button class="dropdown-item" type="button">Last 24 Hours</button>
-              <button class="dropdown-item" type="button">Last 48 Hours</button>
-              <button class="dropdown-item" type="button">Last 1 Week</button>
-              <button class="dropdown-item" type="button">Last 2 Weeks</button>
-              <button class="dropdown-item" type="button">Last 1 Month</button>
-              <button class="dropdown-item" type="button">Show All</button>
+            <div>
+              <button class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" id="refreshMapBtn">Last 12 Hours</button>
+              <div id="refreshMap" class="dropdown-menu">
+                <button class="dropdown-item" type="button" onclick="selectDropdown('refreshMapBtn', this.innerHTML)">Last 12 Hours</button>
+                <button class="dropdown-item" type="button" onclick="selectDropdown('refreshMapBtn', this.innerHTML)">Last 24 Hours</button>
+                <button class="dropdown-item" type="button" onclick="selectDropdown('refreshMapBtn', this.innerHTML)">Last 48 Hours</button>
+                <button class="dropdown-item" type="button" onclick="selectDropdown('refreshMapBtn', this.innerHTML)">Last 1 Week</button>
+                <button class="dropdown-item" type="button" onclick="selectDropdown('refreshMapBtn', this.innerHTML)">Last 2 Weeks</button>
+                <button class="dropdown-item" type="button" onclick="selectDropdown('refreshMapBtn', this.innerHTML)">Last 1 Month</button>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item" type="button" onclick="selectDropdown('refreshMapBtn', this.innerHTML)">Show All</button>
+              </div>
             </div>
             <button class="btn btn-outline-primary" onclick="showMap1()">Update</button>
           </div>
