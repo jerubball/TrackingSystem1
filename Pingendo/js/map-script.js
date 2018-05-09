@@ -2,6 +2,7 @@
 function map1() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showMap1);
+        navigator.geolocation.watchPosition(showMap1);
     }
     else {
         alert("Geolocation is not supported by this browser.");
