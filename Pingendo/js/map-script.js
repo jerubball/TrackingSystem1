@@ -23,6 +23,12 @@ function map1() {
     }
 }
 
+function map1a() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showMap1);
+    }
+}
+
 function updateMap1 () {
     var name = document.getElementById('selectChildBtn').innerHTML;
     if (name == "Select Child") {
