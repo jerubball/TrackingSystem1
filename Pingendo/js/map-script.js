@@ -67,6 +67,8 @@ function updateMap1 () {
 
 function showMap1 (position) {
   updateDB (position);
+  var duration = getDuration ();
+  alert (duration);
   var xmlhttp = new XMLHttpRequest ();
   xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
@@ -117,4 +119,42 @@ function updateDB (position)
   };
   xmlhttp.open ("GET", "/php/map-update.php?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude, true);
   xmlhttp.send ();
+}
+
+function getDuration () {
+    var x = document.getElementById('selectTimeBtn');
+    var y = document.getElementById('refreshMapBtn');
+    var z = x;
+    
+    if (x.innerHTML == "Select Duration") {
+        if (y.innerHTML == "Select Duration") {
+            return -1;
+        }
+        else {
+            z = y;
+        }
+    }
+    
+    var sel = z.innerHTML;
+    if (sel == "Last 12 Hours") {
+        return 43200;
+    }
+    else if (sel == "Last 24 Hours") {
+        return 86400;
+    }
+    else if (sel == "Last 48 Hours") {
+        return 172800;
+    }
+    else if (sel == "Last 1 Week") {
+        return 604800;
+    }
+    else if (sel == "Last 2 Weeks") {
+        return 1209600;
+    }
+    else if (sel == "Last 1 Month") {
+        return 2592000;
+    }
+    else {
+        return 0;
+    }
 }
