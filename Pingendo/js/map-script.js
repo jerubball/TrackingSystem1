@@ -29,6 +29,7 @@ function updateMap1 () {
         alert ("Please select a child");
     }
     else {
+        var duration = getDuration ();
         var xmlhttp = new XMLHttpRequest ();
         xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -60,7 +61,7 @@ function updateMap1 () {
           infowindow.open(map,marker);
         }
       };
-      xmlhttp.open ("GET", "/php/map-retrieve.php?name=" + name, true);
+      xmlhttp.open ("GET", "/php/map-retrieve.php?name=" + name + "&dur=" + duration, true);
       xmlhttp.send ();
     }
 }
@@ -68,7 +69,6 @@ function updateMap1 () {
 function showMap1 (position) {
   updateDB (position);
   var duration = getDuration ();
-  alert (duration);
   var xmlhttp = new XMLHttpRequest ();
   xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
@@ -100,7 +100,7 @@ function showMap1 (position) {
       infowindow.open(map,marker);
     }
   };
-  xmlhttp.open ("GET", "/php/map-retrieve.php?name=", true);
+  xmlhttp.open ("GET", "/php/map-retrieve.php?name=&dur=" + duration, true);
   xmlhttp.send ();
   
 }

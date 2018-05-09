@@ -10,11 +10,19 @@ if (isset($_SESSION['id'])) {
     $id = $_SESSION['id'];
     
     $name = $_GET['name'];
+    $dur = intval($_GET['duration']);
+    $lim = "";
     
     $conn = new mysqli ($db_server, $db_user, $db_pass);
     
     if ($conn -> connect_error) {
       die ("Connection failed: " . $conn -> connect_error);
+    }
+    
+    if ($dur > 0) {
+        $now = time();
+        $past = $now - $dur;
+        $lim = " AND (Time BETWEEN FROM_UNIXTIME($past) AND FROM_UNIXTIME($now))";
     }
     
     if ($name == "") {
@@ -29,7 +37,7 @@ if (isset($_SESSION['id'])) {
             //$row = mysqli_fetch_assoc($ans);
             //$num = intval($row['num']);
             
-            $sql = "SELECT * FROM Child_Tracker.location WHERE Account_ID = " . $usr;
+            $sql = "SELECT * FROM Child_Tracker.location WHERE Account_ID = " . $usr . $lim;
             $ans = $conn -> query($sql);
             if ($ans->num_rows > 0) {
                 while($row = $ans->fetch_assoc()) {
@@ -59,7 +67,7 @@ if (isset($_SESSION['id'])) {
                 //$row = mysqli_fetch_assoc($ans);
                 //$num = intval($row['num']);
                 
-                $sql = "SELECT * FROM Child_Tracker.location WHERE Account_ID = " . $usr;
+                $sql = "SELECT * FROM Child_Tracker.location WHERE Account_ID = " . $usr . $lim;
                 $ans = $conn -> query($sql);
                 if ($ans->num_rows > 0) {
                     while($row = $ans->fetch_assoc()) {
