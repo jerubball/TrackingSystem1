@@ -1,3 +1,3 @@
 #!/bin/sh
 git pull
-cp -r -f ./Pingendo/* /usr/local/apache2/htdocs/
+cp -r -f ./Application/* /usr/local/apache2/htdocs/
