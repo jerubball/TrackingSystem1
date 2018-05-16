@@ -119,8 +119,7 @@ function alertLocation (position) {
   alert ("Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);
 }
 
-function updateDB (position)
-{
+function updateDB (position) {
   var xmlhttp = new XMLHttpRequest ();
   xmlhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
