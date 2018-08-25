@@ -1,3 +1,3 @@
 #!/bin/sh
 git pull
-cp -r -f ./Application/* /usr/local/apache2/htdocs/
+cp -rf ./Application/* /usr/local/apache2/htdocs/TrackingSystem/
