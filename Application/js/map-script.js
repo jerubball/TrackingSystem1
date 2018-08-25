@@ -15,7 +15,7 @@ function map1() {
                 }
             }
         };
-        xmlhttp.open ("GET", "/php/profile-get.php", true);
+        xmlhttp.open ("GET", "../php/profile-get.php", true);
         xmlhttp.send ();
     }
     else {
@@ -71,7 +71,7 @@ function updateMap1 () {
           infowindow.open(map,marker);
         }
       };
-      xmlhttp.open ("GET", "/php/map-retrieve.php?name=" + name + "&dur=" + duration, true);
+      xmlhttp.open ("GET", "../php/map-retrieve.php?name=" + name + "&dur=" + duration, true);
       xmlhttp.send ();
     }
 }
@@ -110,7 +110,7 @@ function showMap1 (position) {
       infowindow.open(map,marker);
     }
   };
-  xmlhttp.open ("GET", "/php/map-retrieve.php?name=&dur=", true);
+  xmlhttp.open ("GET", "../php/map-retrieve.php?name=&dur=", true);
   xmlhttp.send ();
   
 }
@@ -126,7 +126,7 @@ function updateDB (position) {
       //alert (this.responseText);
     }
   };
-  xmlhttp.open ("GET", "/php/map-update.php?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude, true);
+  xmlhttp.open ("GET", "../php/map-update.php?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude, true);
   xmlhttp.send ();
 }
 
