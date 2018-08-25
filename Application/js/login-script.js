@@ -32,7 +32,7 @@ function updateProfile (profile) {
             //alert (this.responseText);
         }
     };
-    xmlhttp.open ("GET", "../php/login-profile.php?id=" + profile.getId() + 
+    xmlhttp.open ("GET", "/TrackingSystem/php/login-profile.php?id=" + profile.getId() + 
         "&first=" + profile.getGivenName() + "&last=" + profile.getFamilyName() + "&email=" + profile.getEmail(), true);
     xmlhttp.send ();
 }
@@ -52,7 +52,7 @@ function updateSession (id) {
             //alert (this.responseText);
         }
     };
-    xmlhttp.open ("GET", "../php/login-cache.php?id=" + id, true);
+    xmlhttp.open ("GET", "/TrackingSystem/php/login-cache.php?id=" + id, true);
     xmlhttp.send ();
 }
 
@@ -69,7 +69,7 @@ function checkSignIn () {
             }
         }
     };
-    xmlhttp.open ("GET", "../php/login-cache.php?id=check", true);
+    xmlhttp.open ("GET", "/TrackingSystem/php/login-cache.php?id=check", true);
     xmlhttp.send ();
 }
 
@@ -88,7 +88,7 @@ function checkNewUser () {
             }
         }
     };
-    xmlhttp.open ("GET", "../php/login-find.php", true);
+    xmlhttp.open ("GET", "/TrackingSystem/php/login-find.php", true);
     xmlhttp.send ();
 }
 
@@ -103,7 +103,7 @@ function addNewUser () {
             */
         }
     };
-    xmlhttp.open ("GET", "../php/login-new.php", true);
+    xmlhttp.open ("GET", "/TrackingSystem/php/login-new.php", true);
     xmlhttp.send ();
 }
 

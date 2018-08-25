@@ -31,7 +31,7 @@ function getProfile () {
             }
         }
     };
-    xmlhttp.open ("GET", "../php/profile-get.php", true);
+    xmlhttp.open ("GET", "/TrackingSystem/php/profile-get.php", true);
     xmlhttp.send ();
 }
 
@@ -47,7 +47,7 @@ function getGroup () {
             document.getElementById('addressZip').value = args[3];
         }
     };
-    xmlhttp.open ("GET", "../php/group-get.php", true);
+    xmlhttp.open ("GET", "/TrackingSystem/php/group-get.php", true);
     xmlhttp.send ();
 }
 
@@ -62,7 +62,7 @@ function updateProfile() {
             //alert (this.responseText);
         }
     };
-    xmlhttp.open ("GET", "../php/profile-update.php?fname=" + fname + "&lname=" + lname + "&email=" + email + "&gender=" + gender, true);
+    xmlhttp.open ("GET", "/TrackingSystem/php/profile-update.php?fname=" + fname + "&lname=" + lname + "&email=" + email + "&gender=" + gender, true);
     xmlhttp.send ();
 }
 
@@ -81,7 +81,7 @@ function updateGroup () {
             }
         }
     };
-    xmlhttp.open ("GET", "../php/group-update.php?street=" + street + "&city=" + city + "&state=" + state + "&zip=" + zip, true);
+    xmlhttp.open ("GET", "/TrackingSystem/php/group-update.php?street=" + street + "&city=" + city + "&state=" + state + "&zip=" + zip, true);
     xmlhttp.send ();
 }
 
@@ -97,7 +97,7 @@ function addChild () {
             }
         }
     };
-    xmlhttp.open ("GET", "../php/group-add.php?email=" + email, true);
+    xmlhttp.open ("GET", "/TrackingSystem/php/group-add.php?email=" + email, true);
     xmlhttp.send ();
 }
 
@@ -113,6 +113,6 @@ function deleteChild () {
             }
         }
     };
-    xmlhttp.open ("GET", "../php/group-remove.php?name=" + name, true);
+    xmlhttp.open ("GET", "/TrackingSystem/php/group-remove.php?name=" + name, true);
     xmlhttp.send ();
 }
