@@ -17,4 +17,4 @@ Final Project: Child Tracking System through Web Browing Session.
 
 ## Go to Product site.
 
-https://him-nyit.ddns.net/
+https://him-nyit.ddns.net/TrackingSystem/
