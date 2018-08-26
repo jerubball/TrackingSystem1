@@ -41,6 +41,6 @@ function updateDropdown (id) {
             document.getElementById(id).innerHTML = htmltext;
         }
     };
-    xmlhttp.open ("GET", "/TrackingSystem/php/group-child.php", true);
+    xmlhttp.open ("GET", "./php/group-child.php", true);
     xmlhttp.send ();
 }

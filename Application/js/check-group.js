@@ -16,7 +16,7 @@ function checkLogin () {
             }
         }
     };
-    xmlhttp.open ("GET", "/TrackingSystem/php/login-cache.php?id=check", true);
+    xmlhttp.open ("GET", "./php/login-cache.php?id=check", true);
     xmlhttp.send ();
 }
 
@@ -34,7 +34,7 @@ function checkUser () {
             }
         }
     };
-    xmlhttp.open ("GET", "/TrackingSystem/php/login-find.php", true);
+    xmlhttp.open ("GET", "./php/login-find.php", true);
     xmlhttp.send ();
 }
 
@@ -52,7 +52,7 @@ function checkGroup () {
             }
         }
     };
-    xmlhttp.open ("GET", "/TrackingSystem/php/group-check.php", true);
+    xmlhttp.open ("GET", "./php/group-check.php", true);
     xmlhttp.send ();
 }
 
@@ -73,6 +73,6 @@ function getAccountType () {
             }
         }
     };
-    xmlhttp.open ("GET", "/TrackingSystem/php/profile-get.php", true);
+    xmlhttp.open ("GET", "./php/profile-get.php", true);
     xmlhttp.send ();
 }
