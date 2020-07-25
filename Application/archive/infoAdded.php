@@ -4,15 +4,13 @@
 <h1>Your Information has been updated</h1>
 
 <?php
-$servername = "localhost:3306";
+$servername = "localhost";
 $username = "tracker.local";
-$password = "13579";
+$password = "";
 $dbname = "Child_Tracker";
 /* my db arguments.
 // localhost seems to work. port number is important.
-$db_server = "localhost:3306";
-$db_user = "tracker.local";
-$db_pass = "13579";
+Note: port number is required for password-based connection. 'localhost' is used for socket-based connection.
 */
 $conn = new mysqli($servername, $username, $password, $dbname);
 if(isset($_POST["send"]))// User came to this page by using Create Group 

@@ -2,9 +2,8 @@
 
 session_start ();
 
-$db_server = "localhost:3306";
+$db_server = "localhost";
 $db_user = "tracker.local";
-$db_pass = "13579";
 
 if (isset($_SESSION['id'])) {
     $id = $_SESSION['id'];
@@ -12,7 +11,7 @@ if (isset($_SESSION['id'])) {
     $last = $_SESSION['last'];
     $email = $_SESSION['email'];
     
-    $conn = new mysqli ($db_server, $db_user, $db_pass);
+    $conn = new mysqli ($db_server, $db_user);
     
     if ($conn -> connect_error) {
       die ("Connection failed: " . $conn -> connect_error);
