@@ -5,13 +5,13 @@
 
 <?php
 $servername = "localhost:3306";
-$username = "admin";
+$username = "tracker.local";
 $password = "13579";
 $dbname = "Child_Tracker";
 /* my db arguments.
 // localhost seems to work. port number is important.
 $db_server = "localhost:3306";
-$db_user = "admin";
+$db_user = "tracker.local";
 $db_pass = "13579";
 */
 $conn = new mysqli($servername, $username, $password, $dbname);
