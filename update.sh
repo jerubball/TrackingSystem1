@@ -1,7 +1,7 @@
 #!/bin/bash
 git pull
-if [[ ! -d /var/www/html/TrackingSystem ]]
-then
-    mkdir /var/www/html/TrackingSystem
-fi
-cp -rf ./Application/* /var/www/html/TrackingSystem/
+#if [[ ! -d /var/www/html1/ ]]
+#then
+#    mkdir /var/www/html1/
+#fi
+cp -rf ./Application/* /var/www/html1/
